@@ -1,7 +1,7 @@
 package com.techelevator.model;
 
 public class Meals {
-
+// TODO adjust name of variables
     private int mealsId;
     private String listOfItems;
     private String listOfIngredients;

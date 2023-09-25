@@ -25,8 +25,8 @@ public class JdbcMealsDao implements MealsDao {
         while(results.next()){
             Meals meals = new Meals();
             meals.setMealsId(results.getInt("meals_id"));
-            meals.setListOfItems(results.getString("list_of_items"));
-            meals.setListOfIngredients(results.getString("list_of_ingredients"));
+            meals.setListOfItems(results.getString("meals"));
+            meals.setListOfIngredients(results.getString("ingredients"));
             listOfMeals.add(meals);
         }
         return listOfMeals;
@@ -39,8 +39,8 @@ public class JdbcMealsDao implements MealsDao {
         Meals meal = new Meals();
         if (result.next()){
             meal.setMealsId(result.getInt("meals_id"));
-            meal.setListOfItems(result.getString("list_of_items"));
-            meal.setListOfIngredients(result.getString("list_of_ingredients"));
+            meal.setListOfItems(result.getString("meals"));
+            meal.setListOfIngredients(result.getString("ingredients"));
         }
         return meal;
     }
@@ -53,7 +53,7 @@ public class JdbcMealsDao implements MealsDao {
 
     @Override
     public void addMeal(Meals meal) {
-        String sql = "INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES (?,?);";
+        String sql = "INSERT INTO meals_list(meals, ingredients) VALUES (?,?);";
         template.update(sql, meal.getListOfItems(), meal.getListOfIngredients());
     }
 
