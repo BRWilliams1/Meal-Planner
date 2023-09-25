@@ -23,6 +23,10 @@ CREATE TABLE meals_list (
 INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('PIZZA', 'cheese, sauce, crust, veggies, meats');
 INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('PASTA', 'cheese, sauce, noodles, veggies, meats');
 INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('BURGER', 'cheese, lettuce, tomato, bun, meat');
+INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('TACO', 'cheese, lettuce, tomato, meat, tortilla');
+INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('GRILLED CHICKEN', 'chicken, herbs, butter');
+INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('SOUP', 'tomato, chicken, herbs, biscuits');
+INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES ('CHICKEN SALAD', 'tomato, chicken, onions, dressing, cheese');
 
 
 COMMIT TRANSACTION;

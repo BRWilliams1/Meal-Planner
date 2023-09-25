@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -13,7 +14,8 @@ import java.util.List;
 @CrossOrigin
 @PreAuthorize("isAuthenticated()")
 public class MealsController {
-    @Autowired private MealsDao mealsDao;
+    @Autowired
+    private MealsDao mealsDao;
     @RequestMapping(path = "/meals", method = RequestMethod.GET)
     public List<Meals> getAllMeals(){
         return mealsDao.getAllMeals();
@@ -24,5 +26,21 @@ public class MealsController {
         Meals meal = mealsDao.getMealById(id);
         return meal;
     }
+
+    @RequestMapping(path = "/addMeal", method = RequestMethod.POST)
+    public void addMeal(@Valid @RequestBody Meals meal){
+        mealsDao.addMeal(meal);
+    }
+    @RequestMapping(path = "/editMeal", method = RequestMethod.PUT)
+    public void editMeal(@Valid @RequestBody Meals meal){
+        mealsDao.editMeal(meal);
+    }
+
+    @RequestMapping(path = "/meals/{id}", method = RequestMethod.DELETE)
+    public void deleteMeal(@PathVariable int id){
+        mealsDao.deleteMeal(id);
+    }
+
+
 
 }

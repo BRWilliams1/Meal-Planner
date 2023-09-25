@@ -3,11 +3,13 @@ package com.techelevator.dao;
 import com.techelevator.model.Meals;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcMealsDao implements MealsDao {
 
     private JdbcTemplate template;
@@ -41,6 +43,24 @@ public class JdbcMealsDao implements MealsDao {
             meal.setListOfIngredients(result.getString("list_of_ingredients"));
         }
         return meal;
+    }
+
+    @Override
+    public void deleteMeal(int id) {
+        String sql = "DELETE FROM meals_list WHERE meals_id = ?";
+        template.update(sql, id);
+    }
+
+    @Override
+    public void addMeal(Meals meal) {
+        String sql = "INSERT INTO meals_list(list_of_items, list_of_ingredients) VALUES (?,?);";
+        template.update(sql, meal.getListOfItems(), meal.getListOfIngredients());
+    }
+
+    @Override
+    public void editMeal(Meals meal) {
+        String sql = "UPDATE meals_list VALUES (?,?)";
+        template.update(sql, meal.getListOfItems(), meal.getListOfIngredients());
     }
 
 }
