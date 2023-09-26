@@ -1,12 +1,14 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <div v-for="meal in meals" v-bind:key="meal.id">
-      <p>{{meal.id}}</p>
-      <h2>{{meal.meals}}</h2>
-      <p>{{meal.ingredients}}</p>
-      <router-link v-bind:to="{name: 'modify', params: {id: meal.id}}">See Details</router-link>
-    </div>
+    <p>If you are seeing this, you are authenticated.</p>
+    <table>
+      <tr v-for="meal in meals" v-bind:key="meal.mealsId">
+        <td>{{ meal.mealsId }}</td>
+        <td>{{ meal.meals }}</td>
+        <td>{{ meal.ingredients }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 

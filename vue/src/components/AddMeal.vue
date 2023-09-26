@@ -1,8 +1,8 @@
 <template>
   <div>
     <form v-on:submit.prevent="addMeal">
-        Meal: <input type="text" v-model="Meal.meals">
-        Ingredients: <input type="text" v-model="Meal.ingredients">
+        Meal: <input type="text" v-model="meal.meals"/>
+        Ingredients: <input type="text" v-model="meal.ingredients"/>
         <button>Save</button>
     </form>
   </div>
@@ -14,15 +14,15 @@ import MealService from '../services/MealService.js';
 export default {
     data(){
         return{
-            Meal: {}
+            meal: {}
         }
     },
     methods: {
         addMeal(){
-            MealService.addMeal(this.Meal).then((response) => {
+            MealService.addMeal(this.meal).then((response) => {
                 if(response.status == 200) {
                         window.alert("Meal Added!");
-                        this.Meal = {};
+                        this.meal = {};
                         this.$router.push({name: "home"});
                 }
             })

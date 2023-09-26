@@ -1,10 +1,9 @@
 package com.techelevator.model;
 
 public class Meals {
-// TODO adjust name of variables
     private int mealsId;
-    private String listOfItems;
-    private String listOfIngredients;
+    private String meals;
+    private String ingredients;
 
 
     public int getMealsId() {
@@ -15,19 +14,19 @@ public class Meals {
         this.mealsId = mealsId;
     }
 
-    public String getListOfItems() {
-        return listOfItems;
+    public String getMeals() {
+        return meals;
     }
 
-    public void setListOfItems(String listOfItems) {
-        this.listOfItems = listOfItems;
+    public void setMeals(String meals) {
+        this.meals = meals;
     }
 
-    public String getListOfIngredients() {
-        return listOfIngredients;
+    public String getIngredients() {
+        return ingredients;
     }
 
-    public void setListOfIngredients(String listOfIngredients) {
-        this.listOfIngredients = listOfIngredients;
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 }
