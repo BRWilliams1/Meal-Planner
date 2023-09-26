@@ -11,5 +11,6 @@ INSERT INTO meals_list(meals, ingredients) VALUES ('GRILLED CHICKEN', 'chicken, 
 INSERT INTO meals_list(meals, ingredients) VALUES ('SOUP', 'tomato, chicken, herbs, biscuits');
 INSERT INTO meals_list(meals, ingredients) VALUES ('CHICKEN SALAD', 'tomato, chicken, onions, dressing, cheese');
 
+INSERT INTO households(user_id) VALUES (1);
 
 COMMIT TRANSACTION;
