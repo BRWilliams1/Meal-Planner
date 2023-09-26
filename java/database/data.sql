@@ -11,6 +11,50 @@ INSERT INTO meals_list(meals, ingredients) VALUES ('GRILLED CHICKEN', 'chicken, 
 INSERT INTO meals_list(meals, ingredients) VALUES ('SOUP', 'tomato, chicken, herbs, biscuits');
 INSERT INTO meals_list(meals, ingredients) VALUES ('CHICKEN SALAD', 'tomato, chicken, onions, dressing, cheese');
 
-INSERT INTO households(user_id) VALUES (1);
+INSERT INTO households(user_id, household_name) VALUES (1, 'home1');
+INSERT INTO households(user_id, household_name) VALUES (1, 'home2');
+INSERT INTO households(user_id, household_name) VALUES (2, 'home2');
+INSERT INTO households(user_id, household_name) VALUES (2, 'home1');
+
+INSERT INTO recipes(recipe_name, instructions) VALUES ('PIZZA', 'cook');
+INSERT INTO recipes(recipe_name, instructions) VALUES ('PASTA', 'cook');
+INSERT INTO recipes(recipe_name, instructions) VALUES ('BURGER', 'cook');
+INSERT INTO recipes(recipe_name, instructions) VALUES ('TACO', 'cook');
+INSERT INTO recipes(recipe_name, instructions) VALUES ('GRILLED CHICKEN', 'cook');
+INSERT INTO recipes(recipe_name, instructions) VALUES ('SOUP', 'cook');
+INSERT INTO recipes(recipe_name, instructions) VALUES ('CHICKEN SALAD', 'cook');
+
+INSERT INTO ingredients(ingredient_name) VALUES ('tomato');
+INSERT INTO ingredients(ingredient_name) VALUES ('cheese');
+INSERT INTO ingredients(ingredient_name) VALUES ('chicken');
+INSERT INTO ingredients(ingredient_name) VALUES ('lettuce');
+INSERT INTO ingredients(ingredient_name) VALUES ('veggies');
+INSERT INTO ingredients(ingredient_name) VALUES ('sauce');
+INSERT INTO ingredients(ingredient_name) VALUES ('herbs');
+
+INSERT INTO measurement_units(measurement_type) VALUES ('tsp.');
+INSERT INTO measurement_units(measurement_type) VALUES ('Tbsp.');
+INSERT INTO measurement_units(measurement_type) VALUES ('cup');
+INSERT INTO measurement_units(measurement_type) VALUES ('qt.');
+INSERT INTO measurement_units(measurement_type) VALUES ('ml');
+INSERT INTO measurement_units(measurement_type) VALUES ('L');
+INSERT INTO measurement_units(measurement_type) VALUES ('fl. oz.');
+INSERT INTO measurement_units(measurement_type) VALUES ('unit');
+
+INSERT INTO households_recipes(household_id, recipe_id) VALUES (1, 3);
+INSERT INTO households_recipes(household_id, recipe_id) VALUES (1, 2);
+INSERT INTO households_recipes(household_id, recipe_id) VALUES (2, 6);
+INSERT INTO households_recipes(household_id, recipe_id) VALUES (2, 4);
+
+INSERT INTO recipes_ingredients(recipe_id, ingredient_id, measurement_id, qty) VALUES (1, 3, 4, 1);
+INSERT INTO recipes_ingredients(recipe_id, ingredient_id, measurement_id, qty) VALUES (1, 2, 3, 2);
+INSERT INTO recipes_ingredients(recipe_id, ingredient_id, measurement_id, qty) VALUES (2, 6, 1, 5);
+INSERT INTO recipes_ingredients(recipe_id, ingredient_id, measurement_id, qty) VALUES (2, 4, 3, 3);
+
+INSERT INTO grocery_list(household_id, ingredient_id) VALUES (1, 3);
+INSERT INTO grocery_list(household_id, ingredient_id) VALUES (1, 2);
+INSERT INTO grocery_list(household_id, ingredient_id) VALUES (2, 6);
+INSERT INTO grocery_list(household_id, ingredient_id) VALUES (2, 4);
+
 
 COMMIT TRANSACTION;
