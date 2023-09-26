@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <p>If you are seeing this, you are authenticated.</p>
     <table>
       <tr v-for="meal in meals" v-bind:key="meal.mealsId">
         <td>{{ meal.mealsId }}</td>
