@@ -6,6 +6,9 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import AddMeal from '../components/AddMeal.vue'
+import EditMeal from '../components/EditMeal.vue'
+import DeleteMeal from '../components/DeleteMeal.vue'
+
 
 Vue.use(Router)
 
@@ -61,7 +64,23 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
-    }
+    },
+    {
+      path: "/editMeal/:id",
+      name: "editMeal",
+      component: EditMeal,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/deleteMeal/:id",
+      name: "deleteMeal",
+      component: DeleteMeal,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 })
 

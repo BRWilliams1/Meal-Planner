@@ -31,6 +31,7 @@ public class MealsController {
     public void addMeal(@Valid @RequestBody Meals meal){
         mealsDao.addMeal(meal);
     }
+
     @RequestMapping(path = "/editMeal", method = RequestMethod.PUT)
     public void editMeal(@Valid @RequestBody Meals meal){
         mealsDao.editMeal(meal);
