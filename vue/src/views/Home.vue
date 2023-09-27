@@ -17,6 +17,9 @@
     </tr>
   </tbody>
 </table>
+<button>Add Meal</button>
+<button>Edit Meal</button>
+<button>Delete Meal</button>
   </div>
   
 </template>
