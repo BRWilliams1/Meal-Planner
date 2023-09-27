@@ -11,7 +11,6 @@ INSERT INTO meals_list(meals, ingredients) VALUES ('GRILLED CHICKEN', 'chicken, 
 INSERT INTO meals_list(meals, ingredients) VALUES ('SOUP', 'tomato, chicken, herbs, biscuits');
 INSERT INTO meals_list(meals, ingredients) VALUES ('CHICKEN SALAD', 'tomato, chicken, onions, dressing, cheese');
 
-<<<<<<< HEAD
 INSERT INTO households(user_id, household_name) VALUES (1, 'home1');
 INSERT INTO households(user_id, household_name) VALUES (1, 'home2');
 INSERT INTO households(user_id, household_name) VALUES (2, 'home2');
@@ -57,25 +56,5 @@ INSERT INTO grocery_list(household_id, ingredient_id) VALUES (1, 2);
 INSERT INTO grocery_list(household_id, ingredient_id) VALUES (2, 6);
 INSERT INTO grocery_list(household_id, ingredient_id) VALUES (2, 4);
 
-=======
-INSERT INTO households(user_id, household_name) VALUES (1, 'Alice');
-INSERT INTO households(user_id, household_name) VALUES (2, 'Bob');
-INSERT INTO households(user_id, household_name) VALUES (1, 'Charles');
-INSERT INTO households(user_id, household_name) VALUES (1, 'Andy');
-
-
-INSERT INTO recipes(recipe_name, instruction) VALUES ('pizza', 'Prepare crust, add sauce, select toppings, bake');
-INSERT INTO recipes(recipe_name, instruction) VALUES ('pasta', 'cook pasta, add sauce, add mushroom, saute for 5 mins');
-INSERT INTO recipes(recipe_name, instruction) VALUES ('Burger', '2 buns, add meat, add cheese');
-INSERT INTO recipes(recipe_name, instruction) VALUES ('taco', 'tortilla, add chicken, add cheese');
-INSERT INTO recipes(recipe_name, instruction) VALUES ('grilled chicken', 'mix herbs, oil, salt, bake');
-INSERT INTO recipes(recipe_name, instruction) VALUES ('soup', 'cook tomato, add seasoning');
-INSERT INTO recipes(recipe_name, instruction) VALUES ('chicken salad', 'chicken, lettuce, onion');
-
-INSERT INTO  household_recipes(household_id, recipe_id) VALUES (1, 2);
-INSERT INTO  household_recipes(household_id, recipe_id) VALUES (1, 4);
-INSERT INTO  household_recipes(household_id, recipe_id) VALUES (2, 3);
-INSERT INTO  household_recipes(household_id, recipe_id) VALUES (2, 5);
->>>>>>> 01762cf359b25f8a4e5d92a31b9492d2f0d3fc81
 
 COMMIT TRANSACTION;
