@@ -5,9 +5,9 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-import AddMeal from '../components/AddMeal.vue'
-import EditMeal from '../components/EditMeal.vue'
-import DeleteMeal from '../components/DeleteMeal.vue'
+import AddMeal from '../views/AddMeal.vue'
+import EditMeal from '../views/EditMeal.vue'
+import DeleteMeal from '../views/DeleteMeal.vue'
 
 
 Vue.use(Router)
