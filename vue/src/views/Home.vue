@@ -1,14 +1,24 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <table>
-      <tr v-for="meal in meals" v-bind:key="meal.mealsId">
-        <td>{{ meal.mealsId }}</td>
-        <td>{{ meal.meals }}</td>
-        <td>{{ meal.ingredients }}</td>
-      </tr>
-    </table>
+    <h1>Meals and Ingredients</h1>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Meals ID</th>
+      <th scope="col">Meals </th>
+      <th scope="col">Meal Ingredients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="meal in meals" v-bind:key="meal.mealsId">
+      <td>{{ meal.mealsId }}</td>
+      <td>{{ meal.meals }}</td>
+      <td>{{ meal.ingredients }}</td>
+    </tr>
+  </tbody>
+</table>
   </div>
+  
 </template>
 
 <script>
@@ -28,3 +38,7 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+</style>
