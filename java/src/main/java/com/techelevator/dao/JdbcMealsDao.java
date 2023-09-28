@@ -30,7 +30,7 @@ public class JdbcMealsDao implements MealsDao {
             listOfMeals.add(meals);
         }
         return listOfMeals;
-    }
+    };
 
     @Override
     public Meals getMealById(int id) {
