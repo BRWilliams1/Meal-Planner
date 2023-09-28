@@ -8,6 +8,9 @@ import store from '../store/index'
 import AddMeal from '../views/AddMeal.vue'
 import EditMeal from '../views/EditMeal.vue'
 import DeleteMeal from '../views/DeleteMeal.vue'
+import AddHousehold from '../views/AddHousehold.vue'
+import EditHousehold from '../views/EditHousehold.vue'
+import DeleteHousehold from '../views/DeleteHousehold.vue'
 
 
 Vue.use(Router)
@@ -81,6 +84,30 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/addHousehold",
+      name: "addHousehold",
+      component: AddHousehold,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/editHousehold/:id",
+      name: "editHousehold",
+      component: EditHousehold,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/deleteHousehold/:id",
+      name: "deleteHousehold",
+      component: DeleteHousehold,
+      meta: {
+        requiresAuth: true
+      }
+    }
   ]
 })
 
