@@ -68,11 +68,12 @@ CREATE TABLE households_meals (
 CREATE TABLE meal_plan (
     meal_plan_id SERIAL,
     planner_date VARCHAR(50) NOT NULL,
-    meals_id int NOT NULL,
+    meals_name VARCHAR(50) NOT NULL,
+--   // meals_id int NOT NULL,
     household_id int NOT NULL,
     CONSTRAINT PK_meal_plan PRIMARY KEY (meal_plan_id),
-    CONSTRAINT FK_household_id FOREIGN KEY (household_id) REFERENCES households(household_id),
-    CONSTRAINT FK_meals_id FOREIGN KEY (meals_id) REFERENCES meals_list(meals_id)
+    CONSTRAINT FK_household_id FOREIGN KEY (household_id) REFERENCES households(household_id)
+--    CONSTRAINT FK_meals_id FOREIGN KEY (meals_id) REFERENCES meals_list(meals_id)
 );
 
 --CREATE TABLE recipes_ingredients (

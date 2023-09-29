@@ -13,7 +13,7 @@ import EditHousehold from '../views/EditHousehold.vue'
 import DeleteHousehold from '../views/DeleteHousehold.vue'
 import ListOfHouseholds from '../views/ListOfHouseholds'
 import AddMealPlan from '../views/AddMealPlan.vue'
-import ListOfMealPlan from '../views/ListOfMealPlan.vue'
+import ListOfMealPlan from '../views/ListOfMealPlan'
 import EditMealPlan from '../views/EditMealPlan.vue'
 import DeleteMealPlan from '../views/DeleteMealPlan.vue'
 

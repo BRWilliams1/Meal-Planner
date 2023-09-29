@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    
     <h1>List Of Meal Plan</h1>
     <table class="table table-striped">
   <thead>
@@ -37,7 +38,9 @@
       v-bind:to="{name: 'addMealPlan' }"
    
    > Add Meal Plan </router-link> 
+   
 </button> 
+
   </div>
   
 </template>
@@ -50,12 +53,12 @@ export default {
   name: "home",
   data(){
     return {
-      mealPlan: []
+      mealPlans: []
     }
   },
   created(){
     MealPlanService.getAllMealPlans().then((resp) => {
-        this.mealPlan = resp.data;
+        this.mealPlans = resp.data;
       }
     );
   }

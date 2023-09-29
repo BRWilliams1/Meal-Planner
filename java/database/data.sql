@@ -63,10 +63,10 @@ INSERT INTO households_meals(household_id, meals_id) VALUES (2, 4);
 --INSERT INTO grocery_list(household_id, ingredient_id) VALUES (2, 6);
 --INSERT INTO grocery_list(household_id, ingredient_id) VALUES (2, 4);
 
-INSERT INTO meal_plan(planner_date, meals_id, household_id) VALUES ('1/3/24', 1, 3);
-INSERT INTO meal_plan(planner_date, meals_id, household_id) VALUES ('1/4/24', 1, 2);
-INSERT INTO meal_plan(planner_date, meals_id, household_id) VALUES ('1/5/24', 2, 1);
-INSERT INTO meal_plan(planner_date, meals_id, household_id) VALUES ('1/6/24', 2, 3);
+INSERT INTO meal_plan(planner_date, meals_name, household_id) VALUES ('1/3/24', 'Pizza', 3);
+INSERT INTO meal_plan(planner_date, meals_name, household_id) VALUES ('1/4/24','Pasta', 2);
+INSERT INTO meal_plan(planner_date, meals_name, household_id) VALUES ('1/5/24', 'Taco', 1);
+INSERT INTO meal_plan(planner_date, meals_name, household_id) VALUES ('1/6/24','Burger', 3);
 
 
 COMMIT TRANSACTION;
