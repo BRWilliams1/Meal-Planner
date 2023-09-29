@@ -40,6 +40,10 @@
     List of households
 
   </router-link>
+   <router-link v-bind:to="{name: 'listOfMealPlan'}">
+    List of households
+
+  </router-link>
   </div>
   
 </template>

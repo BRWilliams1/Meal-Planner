@@ -3,7 +3,7 @@
       <form v-on:submit.prevent="editHousehold">
         <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Household ID</label>
-  <p  class="form-control" id="exampleFormControlInput1">  </p>
+  <p  class="form-control" id="exampleFormControlInput1">{{household.householdId}}</p>
 </div>
               <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Household Name</label>
