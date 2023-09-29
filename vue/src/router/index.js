@@ -15,7 +15,7 @@ import ListOfHouseholds from '../views/ListOfHouseholds'
 import AddMealPlan from '../views/AddMealPlan.vue'
 import ListOfMealPlan from '../views/ListOfMealPlan.vue'
 import EditMealPlan from '../views/EditMealPlan.vue'
-
+import DeleteMealPlan from '../views/DeleteMealPlan.vue'
 
 
 Vue.use(Router)
@@ -141,6 +141,14 @@ const router = new Router({
       path: '/editMealPlan',
       name: 'editMealPlan',
       component: EditMealPlan,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/deleteMealplan/:id",
+      name: "deleteMealplan",
+      component: DeleteMealPlan,
       meta: {
         requiresAuth: true
       }

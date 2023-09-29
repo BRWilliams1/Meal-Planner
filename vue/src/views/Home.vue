@@ -37,11 +37,11 @@
    > Add Meal </router-link> 
 </button>
   <router-link v-bind:to="{name: 'listOfHousehold'}">
-    List of households
+    List of Households
 
   </router-link>
    <router-link v-bind:to="{name: 'listOfMealPlan'}">
-    List of households
+    List of Meal Plan
 
   </router-link>
   </div>

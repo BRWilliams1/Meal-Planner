@@ -22,12 +22,12 @@
    
     > Edit Meal Plan </router-link>
     </button>
-        <!-- <button>
+        <button>
          <router-link
-      v-bind:to="{name: 'deleteHousehold', params:{id : household.householdId}  }" 
+      v-bind:to="{name: 'deleteMealplan', params:{id : mealplan.mealsPlansId}  }" 
    
-    > Delete Household </router-link>
-         </button>  -->
+    > Delete Mealplan  </router-link>
+         </button> 
 
     </tr>
   </tbody>
