@@ -29,7 +29,7 @@
                 HouseholdService.deleteHousehold(id).then(response => {
                     if(response.status === 200){
                         window.alert("Household deleted!");
-                        this.$router.push({name: "home"});
+                        this.$router.push({name: "listOfHousehold"});
                     }
                 })
             }

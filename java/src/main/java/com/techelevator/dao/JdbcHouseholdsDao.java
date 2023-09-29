@@ -4,11 +4,12 @@ import com.techelevator.model.Households;
 import com.techelevator.model.Meals;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class JdbcHouseholdsDao implements HouseholdsDao{
     private JdbcTemplate template;
     public JdbcHouseholdsDao(DataSource dataSource){
@@ -28,7 +29,7 @@ public class JdbcHouseholdsDao implements HouseholdsDao{
         }
         return listOfNames;
     }
-
+    @Override
     public Households getHouseholdById(int id) {
         String sql = "SELECT * FROM households WHERE household_id = ?";
         SqlRowSet result = template.queryForRowSet(sql, id);
@@ -40,19 +41,24 @@ public class JdbcHouseholdsDao implements HouseholdsDao{
         }
         return household;
     }
-
+    @Override
     public void deleteHousehold(int id) {
-        String sql = "DELETE FROM households WHERE household_id = ?";
+        String sql = "DELETE FROM households_meals WHERE household_id = ?";
         template.update(sql, id);
-    }
+        sql = "DELETE FROM user_households WHERE household_id = ?";
+        template.update(sql, id);
+        sql = "DELETE FROM households WHERE household_id = ?";
+        template.update(sql, id);
 
+    }
+    @Override
     public void addHousehold(Households households) {
-        String sql = "INSERT INTO households (household_id, household_name) VALUES(?,?);";
-        template.update(sql, households.getHouseholdId(), households.getHouseholdName());
+        String sql = "INSERT INTO households (household_name) VALUES(?);";
+        template.update(sql, households.getHouseholdName());
     }
-
+    @Override
     public void editHousehold(Households households){
-        String sql = "UPDATE households SET household_id, household_name = ? WHERE household_id = ?";
-        template.update(sql, households.getHouseholdId(), households.getHouseholdName());
+        String sql = "UPDATE households SET household_name = ? WHERE household_id = ?";
+        template.update(sql,households.getHouseholdName(), households.getHouseholdId() );
     }
 }

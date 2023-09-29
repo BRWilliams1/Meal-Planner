@@ -3,7 +3,7 @@
       <form v-on:submit.prevent="editHousehold">
         <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Household ID</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1"   v-model="household.householdId"> 
+  <p  class="form-control" id="exampleFormControlInput1">  </p>
 </div>
               <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Household Name</label>
@@ -29,14 +29,14 @@
               HouseholdsService.editHousehold(this.household).then((response) => {
                   if(response.status == 200) {
                           window.alert("Household updated!");
-                          this.$router.push({name: "home"});
+                          this.$router.push({name: "listOfHousehold"});
                   }
               })
           }
       },
       created() {
         this.householdId = this.$route.params.id;
-        HouseholdsService.getHouseholdById(this.household).then(
+        HouseholdsService.getHouseholdById(this.householdId).then(
             (response) => {
                 this.household = response.data;
             }

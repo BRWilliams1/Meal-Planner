@@ -1,14 +1,14 @@
 <template>
   <div>
     <form v-on:submit.prevent="addHousehold">
-            <div class="mb-3">
+            <!-- <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Household ID</label>
   <input type="text" class="form-control" id="exampleFormControlInput1"   v-model="household.householdId"> 
-</div> 
+</div>  -->
  
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Household Name</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="household.name"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="household.householdName"></textarea>
 </div>
         <button>Save</button>
     </form>
@@ -31,7 +31,7 @@ export default {
                 if(response.status == 200) {
                         window.alert("Household Added!");
                         this.household = {};
-                        this.$router.push({name: "home"});
+                        this.$router.push({name: "listOfHousehold"});
                 }
             })
             .catch((error) => {

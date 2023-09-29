@@ -54,7 +54,7 @@ public class JdbcMealPlansDao implements MealPlansDao {
         String sql = "INSERT INTO meal_plan_list (meal_plan_id, date, meals_id) VALUES (?,?,?) ;" +
                 "JOIN meal_list ON meal_list.meals_id = meal_plan_list.meals_id" +
                 "JOIN households_meals ON households_meals.meal_plan_id = meal_plan_list.meal_plan_id";
-        template.update(sql, meal.getDate(), meal.
+//        template.update(sql, meal.getDate(), meal.
         
 
     }

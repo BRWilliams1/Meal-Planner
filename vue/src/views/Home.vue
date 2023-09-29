@@ -36,12 +36,19 @@
    
    > Add Meal </router-link> 
 </button>
+  <router-link v-bind:to="{name: 'listOfHousehold'}">
+    List of households
+
+  </router-link>
   </div>
   
 </template>
 
 <script>
+
 import MealService from '../services/MealService';
+
+
 export default {
   name: "home",
   data(){

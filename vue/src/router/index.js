@@ -11,6 +11,7 @@ import DeleteMeal from '../views/DeleteMeal.vue'
 import AddHousehold from '../views/AddHousehold.vue'
 import EditHousehold from '../views/EditHousehold.vue'
 import DeleteHousehold from '../views/DeleteHousehold.vue'
+import ListOfHouseholds from '../views/ListOfHouseholds'
 
 
 Vue.use(Router)
@@ -104,6 +105,14 @@ const router = new Router({
       path: "/deleteHousehold/:id",
       name: "deleteHousehold",
       component: DeleteHousehold,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/listOfHousehold",
+      name: "listOfHousehold",
+      component: ListOfHouseholds,
       meta: {
         requiresAuth: true
       }
