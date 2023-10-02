@@ -3,6 +3,8 @@
     <form v-on:submit.prevent="addMeal">
         <label>Meal</label>
         <input v-model="meal.mealName" />
+        <label>Meal Description</label>
+        <textarea v-model="meal.description"></textarea>
         <label>Meal Ingredients</label>
         <textarea v-model="meal.ingredients"></textarea>
         <label>Meal Instructions</label>

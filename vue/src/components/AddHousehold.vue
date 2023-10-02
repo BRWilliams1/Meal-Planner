@@ -3,7 +3,7 @@
     <form v-on:submit.prevent="runTwoMethods">
       <div>
         <label>Household Name</label>
-        <p>{{ this.household }}</p>
+        <!-- <p>{{ this.household }}</p> -->
         <textarea v-model="household.householdName"></textarea>
       </div>
       <button>Save</button>

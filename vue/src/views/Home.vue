@@ -4,7 +4,7 @@
     <h5>Meal Planning for Mixed Households</h5>
     <div>
         <router-link class="home-page-link" v-bind:to="{ name: 'home' }">Home</router-link>
-        <router-link class="home-page-link" v-bind:to="{ name: 'browseMealPlans' }">Browse Meals</router-link>
+        <router-link class="home-page-link" v-bind:to="{ name: 'browseMealPlans' }">Browse Meal Plans</router-link>
     </div>
   </div>
 </template>

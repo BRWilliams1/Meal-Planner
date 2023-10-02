@@ -11,7 +11,7 @@
       <div v-else>
         <h1>Create Household</h1>
         <add-household/>
-        <p>{{ household.householdId }}</p>
+        <!-- <p>{{ household.householdId }}</p> -->
         <router-link v-bind:to="{name: 'browseHouseholds'}"> Browse Household </router-link>
 
       </div>

@@ -1,6 +1,8 @@
 <template>
     <div class="home">
       <h1>Browse Households</h1>
+        
+      <button><router-link v-bind:to="{ name: 'myHousehold' }">Home</router-link></button>
       <div v-for="household in households" v-bind:key="household.householdId">
         <p>{{ household.householdId }}</p>
         <p>{{ household.householdName }}</p>
@@ -32,7 +34,7 @@
                 HouseholdService.joinHousehold(this.household).then(response => {
                     if(response.status === 200){
                         window.alert("Household joined!");
-                        this.$router.push({name: "home"});
+                        this.$router.push({name: "myHousehold"});
                     }
                 })
             }

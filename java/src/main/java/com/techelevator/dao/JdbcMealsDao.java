@@ -59,14 +59,14 @@ public class JdbcMealsDao implements MealsDao {
 
     @Override
     public void addMeal(Meals meal) {
-        String sql = "INSERT INTO meals (meal_name, ingredients, instructions) VALUES(?,?,?);";
-        template.update(sql, meal.getMealName(), meal.getIngredients(), meal.getInstructions());
+        String sql = "INSERT INTO meals (meal_name, description, ingredients, instructions) VALUES(?,?,?,?);";
+        template.update(sql, meal.getMealName(), meal.getDescription(), meal.getIngredients(), meal.getInstructions());
     }
 
     @Override
     public void editMeal(Meals meal) {
-        String sql = "UPDATE meals SET meal_name = ?, ingredients = ?, instructions = ? WHERE meal_id = ?";
-        template.update(sql, meal.getMealName(), meal.getIngredients(), meal.getInstructions(), meal.getMealId());
+        String sql = "UPDATE meals SET meal_name = ?, description = ?, ingredients = ?, instructions = ? WHERE meal_id = ?";
+        template.update(sql, meal.getMealName(), meal.getDescription(), meal.getIngredients(), meal.getInstructions(), meal.getMealId());
     }
 
 }
