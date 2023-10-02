@@ -1,52 +1,83 @@
 <template>
   <div>
-    <form v-on:submit.prevent="addHousehold">
-            <!-- <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Household ID</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1"   v-model="household.householdId"> 
-</div>  -->
- 
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Household Name</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="household.householdName"></textarea>
-</div>
-        <button>Save</button>
+    <form v-on:submit.prevent="runTwoMethods">
+      <div>
+        <label>Household Name</label>
+        <p>{{ this.household }}</p>
+        <textarea v-model="household.householdName"></textarea>
+      </div>
+      <button>Save</button>
     </form>
-
   </div>
 </template>
 
-<script>
-import HouseholdsService from '../services/HouseholdsService.js';
+  <script>
+import HouseholdService from "../services/HouseholdService.js";
 
 export default {
-    data(){
-        return{
-            household: {}
+  data() {
+    return {
+      household:{}
+    };
+  },
+  methods: {
+    // addHousehold() {
+    //   HouseholdService.addHousehold(this.household)
+    //     .then((response) => {
+    //       if (response.status == 200) {
+    //         const generatedHouseholdId = response.data;
+    //         this.household.householdId = generatedHouseholdId;
+    //         window.alert("Household Added!");
+    //         console.log(this.household);
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       if (error.response) {
+    //         window.alert("Bad Request");
+    //       } else if (error.request) {
+    //         window.alert("error");
+    //       }
+    //     });
+    // },
+    async addHousehold() {
+        try {
+        const response = await HouseholdService.addHousehold(this.household);
+        if (response.status === 200) {
+            const generatedHouseholdId = response.data;
+            this.household.householdId = generatedHouseholdId;
+            console.log(this.household);
+        }
+        } catch (error) {
+        if (error.response) {
+            window.alert("Bad Request");
+        } else if (error.request) {
+            window.alert("Error");
+        }
         }
     },
-    methods: {
-        addHousehold(){
-            HouseholdsService.addHousehold(this.household).then((response) => {
-                if(response.status == 200) {
-                        window.alert("Household Added!");
-                        this.household = {};
-                        this.$router.push({name: "listOfHousehold"});
-                }
-            })
-            .catch((error) => {
-                if (error.response){
-                    window.alert("Bad Request");
-                }
-                else if (error.request){
-                    window.alert("error");
-                }
-            })
-        }
-    }
-}
+    linkOwner() {
+      HouseholdService.linkHouseholdOwner(this.household)
+        .then((response) => {
+          if (response.status == 200) {
+            window.alert("Household Added!");
+          }
+        })
+        .catch((error) => {
+          if (error.response) {
+            window.alert("Bad Request");
+          } else if (error.request) {
+            window.alert("error");
+          }
+        });
+    },
+    runTwoMethods() {
+      this.addHousehold().then(() => this.linkOwner())
+      this.$router.push({name: "myHousehold"});
+      window.location.reload();
+    },
+  },
+};
 </script>
 
-<style>
-
+  <style>
 </style>

@@ -19,48 +19,54 @@ public class JdbcMealsDao implements MealsDao {
 
     @Override
     public List<Meals> getAllMeals() {
-        String sql = "SELECT * FROM meals_list";
+        String sql = "SELECT * FROM meals";
         SqlRowSet results = template.queryForRowSet(sql);
         List<Meals> listOfMeals = new ArrayList<>();
         while(results.next()){
             Meals meals = new Meals();
-            meals.setMealsId(results.getInt("meals_id"));
-            meals.setMeals(results.getString("meals"));
+            meals.setMealId(results.getInt("meal_id"));
+            meals.setMealName(results.getString("meal_name"));
+            meals.setDescription(results.getString("description"));
             meals.setIngredients(results.getString("ingredients"));
+            meals.setInstructions(results.getString("instructions"));
             listOfMeals.add(meals);
         }
         return listOfMeals;
-    };
+    }
 
     @Override
     public Meals getMealById(int id) {
-        String sql = "SELECT * FROM meals_list WHERE meals_id = ?";
+        String sql = "SELECT * FROM meals WHERE meal_id = ?";
         SqlRowSet result = template.queryForRowSet(sql, id);
         Meals meal = new Meals();
         if (result.next()){
-            meal.setMealsId(result.getInt("meals_id"));
-            meal.setMeals(result.getString("meals"));
+            meal.setMealId(result.getInt("meal_id"));
+            meal.setMealName(result.getString("meal_name"));
+            meal.setDescription(result.getString("description"));
             meal.setIngredients(result.getString("ingredients"));
+            meal.setInstructions(result.getString("instructions"));
         }
         return meal;
     }
 
     @Override
     public void deleteMeal(int id) {
-        String sql = "DELETE FROM meals_list WHERE meals_id = ?";
+        String sql = "DELETE FROM meal_plan_data WHERE meal_id = ?";
+        template.update(sql, id);
+        sql = "DELETE FROM meals WHERE meal_id = ?";
         template.update(sql, id);
     }
 
     @Override
     public void addMeal(Meals meal) {
-        String sql = "INSERT INTO meals_list (meals, ingredients) VALUES(?,?);";
-        template.update(sql, meal.getMeals(), meal.getIngredients());
+        String sql = "INSERT INTO meals (meal_name, ingredients, instructions) VALUES(?,?,?);";
+        template.update(sql, meal.getMealName(), meal.getIngredients(), meal.getInstructions());
     }
 
     @Override
     public void editMeal(Meals meal) {
-        String sql = "UPDATE meals_list SET meals = ?, ingredients = ? WHERE meals_id = ?";
-        template.update(sql, meal.getMeals(), meal.getIngredients(), meal.getMealsId());
+        String sql = "UPDATE meals SET meal_name = ?, ingredients = ?, instructions = ? WHERE meal_id = ?";
+        template.update(sql, meal.getMealName(), meal.getIngredients(), meal.getInstructions(), meal.getMealId());
     }
 
 }

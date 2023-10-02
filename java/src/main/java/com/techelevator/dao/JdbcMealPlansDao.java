@@ -17,20 +17,21 @@ public class JdbcMealPlansDao implements MealPlansDao {
     }
 
     @Override
-    public List<MealPlans> getAllMealsPlans() {
-//        String sql = "SELECT meal_plan_id, planner_date, meals_list.meals, household_id " +
-//                "FROM meal_plan JOIN meals_list ON meals_plan.meals_id = meals_list.meals_id";
-
-        String sql = "select * from meal_plan";
+    public List<MealPlans> getAllMealPlans() {
+        String sql = "SELECT meal_plan.meal_plan_id, household_id, meal_plan_data.planner_date, " +
+                "meal_plan_data.meal_id, meals.meal_name FROM meal_plan " +
+                "JOIN meal_plan_data ON meal_plan.meal_plan_id = meal_plan_data.meal_plan_id " +
+                "JOIN meals ON meal_plan_data.meal_id = meals.meal_id;";
         SqlRowSet results = template.queryForRowSet(sql);
         List<MealPlans> listOfMealPlans = new ArrayList<>();
         while(results.next()){
-            MealPlans mealPlans = new MealPlans();
-            mealPlans.setMealsPlansId(results.getInt("meal_plan_id"));
-            mealPlans.setDate(results.getString("planner_date"));
-            mealPlans.setMealsName(results.getString("meals_name"));
-            mealPlans.setHouseholdId(results.getInt("household_id"));
-            listOfMealPlans.add(mealPlans);
+            MealPlans mealPlan = new MealPlans();
+            mealPlan.setMealPlanId(results.getInt("meal_plan_id"));
+            mealPlan.setHouseholdId(results.getInt("household_id"));
+            mealPlan.setPlannerDate(results.getString("planner_date"));
+            mealPlan.setMealId(results.getInt("meal_id"));
+            mealPlan.setMealName(results.getString("meal_name"));
+            listOfMealPlans.add(mealPlan);
         }
         return listOfMealPlans;
     }
@@ -45,9 +46,9 @@ public class JdbcMealPlansDao implements MealPlansDao {
         SqlRowSet results = template.queryForRowSet(sql, id);
         MealPlans mealPlans = new MealPlans();
         if(results.next()){
-            mealPlans.setMealsPlansId(results.getInt("meal_plan_id"));
-            mealPlans.setDate(results.getString("planner_date"));
-            mealPlans.setMealsName(results.getString("meals_name"));
+            mealPlans.setMealPlanId(results.getInt("meal_plan_id"));
+            mealPlans.setPlannerDate(results.getString("planner_date"));
+            mealPlans.setMealName(results.getString("meals_name"));
             mealPlans.setHouseholdId(results.getInt("household_id"));
         }
         return mealPlans;
@@ -71,14 +72,14 @@ public class JdbcMealPlansDao implements MealPlansDao {
 //                "JOIN households_meals ON households_meals.meal_plan_id = meal_plan_list.meal_plan_id";
 ////        template.update(sql, meal.getDate(), meal.
         String sql = "INSERT INTO meal_plan (planner_date, meals_name, household_id) VALUES(?,?,?);";
-        template.update(sql, meal.getDate(), meal.getMealsName(), meal.getHouseholdId());
+        template.update(sql, meal.getPlannerDate(), meal.getMealName(), meal.getHouseholdId());
 
     }
 
     @Override
     public void editMealPlans(MealPlans meal) {
         String sql = "UPDATE meal_plan SET planner_date = ?, meals_name = ?";
-        template.update(sql,meal.getDate(),meal.getMealsName());
+        template.update(sql,meal.getPlannerDate(),meal.getMealName());
 
     }
 }

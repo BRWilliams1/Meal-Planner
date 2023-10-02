@@ -14,9 +14,9 @@ public class MealPlansController {
     @Autowired
     private MealPlansDao mealPlansDao;
 
-    @RequestMapping(path = "/mealplan", method = RequestMethod.GET)
+    @RequestMapping(path = "/mealPlans", method = RequestMethod.GET)
     public List<MealPlans> getAllMealPlans(){
-        return mealPlansDao.getAllMealsPlans();
+        return mealPlansDao.getAllMealPlans();
     }
 
     @RequestMapping(path = "/mealplan/{id}", method = RequestMethod.GET)

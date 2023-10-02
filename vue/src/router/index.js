@@ -5,18 +5,14 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-import AddMeal from '../views/AddMeal.vue'
-import EditMeal from '../views/EditMeal.vue'
-import DeleteMeal from '../views/DeleteMeal.vue'
-import AddHousehold from '../views/AddHousehold.vue'
-import EditHousehold from '../views/EditHousehold.vue'
-import DeleteHousehold from '../views/DeleteHousehold.vue'
-import ListOfHouseholds from '../views/ListOfHouseholds'
-import AddMealPlan from '../views/AddMealPlan.vue'
-import ListOfMealPlan from '../views/ListOfMealPlan'
-import EditMealPlan from '../views/EditMealPlan.vue'
-import DeleteMealPlan from '../views/DeleteMealPlan.vue'
-
+import AddMealView from '../views/AddMealView.vue'
+import EditMealView from '../views/EditMealView.vue'
+import DeleteMealView from '../views/DeleteMealView.vue'
+import BrowseMeals from '../views/BrowseMeals.vue'
+import BrowseHouseholds from '../views/BrowseHouseholds.vue'
+import MyHousehold from '../views/MyHousehold.vue'
+import AddHouseholdView from '../views/AddHouseholdView'
+import BrowseMealPlans from '../views/BrowseMealPlans'
 
 Vue.use(Router)
 
@@ -38,7 +34,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -68,7 +64,7 @@ const router = new Router({
     {
       path: "/addMeal",
       name: "addMeal",
-      component: AddMeal,
+      component: AddMealView,
       meta: {
         requiresAuth: true
       }
@@ -76,7 +72,7 @@ const router = new Router({
     {
       path: "/editMeal/:id",
       name: "editMeal",
-      component: EditMeal,
+      component: EditMealView,
       meta: {
         requiresAuth: true
       }
@@ -84,7 +80,31 @@ const router = new Router({
     {
       path: "/deleteMeal/:id",
       name: "deleteMeal",
-      component: DeleteMeal,
+      component: DeleteMealView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/browseMeals",
+      name: "browseMeals",
+      component: BrowseMeals,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/browseHouseholds",
+      name: "browseHouseholds",
+      component: BrowseHouseholds,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/myHousehold",
+      name: "myHousehold",
+      component: MyHousehold,
       meta: {
         requiresAuth: true
       }
@@ -92,67 +112,20 @@ const router = new Router({
     {
       path: "/addHousehold",
       name: "addHousehold",
-      component: AddHousehold,
+      component: AddHouseholdView,
       meta: {
         requiresAuth: true
       }
     },
     {
-      path: "/editHousehold/:id",
-      name: "editHousehold",
-      component: EditHousehold,
+      path: "/browseMealPlans",
+      name: "browseMealPlans",
+      component: BrowseMealPlans,
       meta: {
         requiresAuth: true
       }
     },
-    {
-      path: "/deleteHousehold/:id",
-      name: "deleteHousehold",
-      component: DeleteHousehold,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: "/listOfHousehold",
-      name: "listOfHousehold",
-      component: ListOfHouseholds,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/addMealPlan',
-      name: 'addMealPlan',
-      component: AddMealPlan,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: "/listOfMealPlan",
-      name: "listOfMealPlan",
-      component: ListOfMealPlan,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/editMealPlan',
-      name: 'editMealPlan',
-      component: EditMealPlan,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: "/deleteMealplan/:id",
-      name: "deleteMealplan",
-      component: DeleteMealPlan,
-      meta: {
-        requiresAuth: true
-      }
-    }
+  
   ]
 })
 

@@ -1,25 +1,36 @@
 package com.techelevator.model;
 
 public class Meals {
-    private int mealsId;
-    private String meals;
+
+    private int mealId;
+    private String mealName;
+    private String description;
     private String ingredients;
+    private String instructions;
 
 
-    public int getMealsId() {
-        return mealsId;
+    public int getMealId() {
+        return mealId;
     }
 
-    public void setMealsId(int mealsId) {
-        this.mealsId = mealsId;
+    public void setMealId(int mealId) {
+        this.mealId = mealId;
     }
 
-    public String getMeals() {
-        return meals;
+    public String getMealName() {
+        return mealName;
     }
 
-    public void setMeals(String meals) {
-        this.meals = meals;
+    public void setMealName(String mealName) {
+        this.mealName = mealName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getIngredients() {
@@ -29,4 +40,13 @@ public class Meals {
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
 }

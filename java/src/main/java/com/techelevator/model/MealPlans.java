@@ -4,13 +4,20 @@ import java.time.LocalDate;
 
 public class MealPlans {
 
-    private String date;
-
-    private String mealsName;
-
-    private int mealsPlansId;
-
+    private int mealPlanId;
     private int householdId;
+    private String plannerDate;
+    private int mealId;
+    private String mealName;
+
+
+    public int getMealPlanId() {
+        return mealPlanId;
+    }
+
+    public void setMealPlanId(int mealPlanId) {
+        this.mealPlanId = mealPlanId;
+    }
 
     public int getHouseholdId() {
         return householdId;
@@ -20,38 +27,29 @@ public class MealPlans {
         this.householdId = householdId;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getPlannerDate() {
+        return plannerDate;
     }
 
-    public void setMealsPlansId(int mealsPlansId) {
-        this.mealsPlansId = mealsPlansId;
+    public void setPlannerDate(String plannerDate) {
+        this.plannerDate = plannerDate;
     }
 
-
-    public int getMealsPlansId() {
-        return mealsPlansId;
+    public int getMealId() {
+        return mealId;
     }
 
-    public String getMealsName() {
-        return mealsName;
+    public void setMealId(int mealId) {
+        this.mealId = mealId;
     }
 
-    public void setMealsName(String mealsName) {
-        this.mealsName = mealsName;
+    public String getMealName() {
+        return mealName;
     }
 
-    public String getDate() {
-        return date;
+    public void setMealName(String mealName) {
+        this.mealName = mealName;
     }
-
-
-
-
-
-
-
-
 
 
 

@@ -1,104 +1,56 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+    <div id="app">
+      <div id="nav">
+        <div class="nav-left">
+          <router-link class="nav-link" v-bind:to="{ name: 'home' }">Home</router-link>
+          <router-link class="nav-link" v-if="$store.state.token != ''" v-bind:to="{ name: 'myHousehold' }">My Household</router-link>
+          <router-link class="nav-link" v-bind:to="{ name: 'browseMeals' }">Browse Meals</router-link>
+          <router-link class="nav-link" v-if="$store.state.token != ''" v-bind:to="{ name: 'home' }">Generate Meal Plan</router-link>
+        </div>
+        <div class="nav-right">
+          <router-link class="nav-link" v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
+          <router-link class="nav-link" v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Log In</router-link>
+          <router-link class="nav-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Log Out</router-link>
+        </div>
+      </div>
+      <router-view class="content"/>
     </div>
-    <router-view />
-
-
-
-
-
-
-
-
-    
-
-<!-- *{
-    margin: 0;
-    padding: 0;
+  </template>
+  
+  <script>
+  
+  </script>
+  
+  <style>
+#app {
+    margin-top: 0;
 }
 
-.main{
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(https://images.onlymyhealth.com//imported/images/2023/April/17_Apr_2023/Main_greens.jpg)
-    background-position center;
-    background-size: cover;
-    height: 109vh;
-}
-
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-}
-
-.icon{
-    width:200px;
-    float: left;
-    height:70px;
-}
-
-.logo{
-    color:orange
-    font-size 35px;
-    font-family: Arial, Helvetica, sans-serif
-    padding-left 20px;
-    float: left;
-    padding-top:10px;
-}
-.menu{
-    width: 400px;
-    float: left;
-    justify-content: center;
-    align-items: center;
-}
-ul{
-    float: left;
+#nav {
+    padding: 30px;
+    background-color: #083D77;
+    color: #EBEBD3;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
-ul li a{
-    text-decoration: none;
-    color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
+    justify-content: space-between;
 }
 
-ubl li a:hover{
-    color:tomato;
+.nav-left {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.search{
-    width: 330px;
-    float: left;
-    margin-left: 270px;;
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.srch{
-font-family: 'Times New Roman';
-width: 200px;
-height: 40px;
-background: transparent;
-border: 1px solid orange;
-margin-top: 13px;
-color: whitesmoke;
-border-right: none;
-font-size: 16px;
-float: left;
-padding: 10px;
+#nav .nav-link {
+    margin-right: 20px;
+    color: #F4D35E;
+}
 
-} -->
+#nav .nav-link:hover {
+    color: #EE964B;
+}
 
-
-  </div>
-</template>
+  </style>

@@ -1,74 +1,38 @@
 <template>
-  <div class="home">
-    <h1>Meals and Ingredients</h1>
-    <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Meals ID</th>
-      <th scope="col">Meals </th>
-      <th scope="col">Meal Ingredients</th>
-        </tr>
-  </thead>
-  <tbody>
-    <tr v-for="meal in meals" v-bind:key="meal.mealsId">
-      <td>{{ meal.mealsId }}</td>
-      <td>{{ meal.meals }}</td>
-      <td>{{ meal.ingredients }}</td>
-       <button>
-         <router-link
-      v-bind:to="{name: 'editMeal', params:{id : meal.mealsId}  }"
-   
-   > Edit Meal </router-link>
-    </button>
-       <button>
-         <router-link
-      v-bind:to="{name: 'deleteMeal', params:{id : meal.mealsId}  }"
-   
-   > Delete Meal </router-link>
-         </button>
-
-    </tr>
-  </tbody>
-</table>
-<button>
- <router-link
-      v-bind:to="{name: 'addMeal' }"
-   
-   > Add Meal </router-link> 
-</button>
-  <router-link v-bind:to="{name: 'listOfHousehold'}">
-    List of Households
-
-  </router-link>
-   <router-link v-bind:to="{name: 'listOfMealPlan'}">
-    List of Meal Plan
-
-  </router-link>
+  <div class="container">
+    <h1>Welcome to Housemates</h1>
+    <h5>Meal Planning for Mixed Households</h5>
+    <div>
+        <router-link class="home-page-link" v-bind:to="{ name: 'home' }">Home</router-link>
+        <router-link class="home-page-link" v-bind:to="{ name: 'browseMealPlans' }">Browse Meals</router-link>
+    </div>
   </div>
-  
 </template>
 
-<script>
 
-import MealService from '../services/MealService';
+<style>
+/* could you style it so that the all the content is in the center of the page and so that the links look like buttons
+*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-
-export default {
-  name: "home",
-  data(){
-    return {
-      meals: []
-    }
-  },
-  created(){
-    MealService.getAllMeals().then((resp) => {
-        this.meals = resp.data;
-      }
-    );
-  }
-};
-</script>
-
-<style scoped>
-
+.home-page-link {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px; 
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
 </style>

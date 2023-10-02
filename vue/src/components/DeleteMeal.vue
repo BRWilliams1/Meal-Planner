@@ -1,29 +1,24 @@
 <template>
     <div>
-      <form v-on:submit.prevent="deleteMeal(meal.mealsId)">
-          <!-- Meal: <input type="text" v-model="meal.meals"/>
-          Ingredients: <input type="text" v-model="meal.ingredients"/> -->
-              <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Meal</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1"   v-model="meal.meals"> 
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Meal Ingredients</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="meal.ingredients"></textarea>
-</div>
-          <button>Delete</button>
+      <form v-on:submit.prevent="deleteMeal(meal.mealId)">
+          <label>Meal</label>
+          <p>{{ meal.mealName }}</p>
+          <label>Meal Ingredients</label>
+          <p>{{ meal.ingredients }}</p>
+          <label>Meal Instructions</label>
+          <p>{{ meal.instructions }}</p>
+          <button>Delete Meal</button>
       </form>
     </div>
   </template>
-
+  
   <script>
-  import MealService from '../services/MealService.js';
-
+  import MealService from '../services/MealService'
   export default {
       data(){
           return{
-            mealId: -1,
-            meal: {}
+              mealId: -1,
+              meal: {}
           }
       },
       methods: {
@@ -43,10 +38,11 @@
                 this.meal = response.data;
             }
         );
-    },
+      },
   }
+  
   </script>
-
+  
   <style>
-
+  
   </style>
