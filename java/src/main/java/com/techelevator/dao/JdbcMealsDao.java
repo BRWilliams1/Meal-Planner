@@ -35,6 +35,24 @@ public class JdbcMealsDao implements MealsDao {
     }
 
     @Override
+    public List<Meals> getAllUsersMeals(String username) {
+        String sql = "SELECT * FROM meals WHERE meal_owner = ?";
+        SqlRowSet results = template.queryForRowSet(sql, username);
+        List<Meals> listOfMeals = new ArrayList<>();
+        while(results.next()){
+            Meals meals = new Meals();
+            meals.setMealId(results.getInt("meal_id"));
+            meals.setMealName(results.getString("meal_name"));
+            meals.setDescription(results.getString("description"));
+            meals.setIngredients(results.getString("ingredients"));
+            meals.setInstructions(results.getString("instructions"));
+            meals.setMealOwner(results.getString("meal_owner"));
+            listOfMeals.add(meals);
+        }
+        return listOfMeals;
+    }
+
+    @Override
     public Meals getMealById(int id) {
         String sql = "SELECT * FROM meals WHERE meal_id = ?";
         SqlRowSet result = template.queryForRowSet(sql, id);
@@ -58,9 +76,9 @@ public class JdbcMealsDao implements MealsDao {
     }
 
     @Override
-    public void addMeal(Meals meal) {
-        String sql = "INSERT INTO meals (meal_name, description, ingredients, instructions) VALUES(?,?,?,?);";
-        template.update(sql, meal.getMealName(), meal.getDescription(), meal.getIngredients(), meal.getInstructions());
+    public void addMeal(Meals meal, String username) {
+        String sql = "INSERT INTO meals (meal_name, description, ingredients, instructions, meal_owner) VALUES(?,?,?,?,?);";
+        template.update(sql, meal.getMealName(), meal.getDescription(), meal.getIngredients(), meal.getInstructions(), username);
     }
 
     @Override

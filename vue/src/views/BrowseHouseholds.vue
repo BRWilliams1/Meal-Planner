@@ -1,21 +1,15 @@
 <template>
     <div class="home">
       <h1>Browse Households</h1>
-      <button><router-link v-bind:to="{ name: 'myHousehold' }">Home</router-link></button>
-    
-        <div class="household-container">
-      <div v-for="household in households" v-bind:key="household.householdId" class="household-card">
-        <p>{{ household.householdName }}</p>
-        <button @click="showDetails(household)">More Details</button>
-      </div>
-        </div>
+        
+      <button><router-link v-bind:to="{ name: 'myHousehold' }">Create Household</router-link></button>
+      <div v-for="household in households" v-bind:key="household.householdId">
         <p>{{ household.householdId }}</p>
         <p>{{ household.householdName }}</p>
         <p>{{ household.householdOwner }}</p>
         <button @click="joinHousehold(household.householdId)">Join Household</button>
       </div>
-    
-
+    </div>
   </template>
   
   <script>

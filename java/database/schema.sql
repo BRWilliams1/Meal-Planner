@@ -25,6 +25,7 @@ CREATE TABLE meals (
     description varchar(200) NOT NULL,
     ingredients varchar(50) NOT NULL,
     instructions varchar(50) NOT NULL,
+    meal_owner varchar(50) NOT NULL,
     CONSTRAINT PK_meal_id PRIMARY KEY (meal_id)
 );
 

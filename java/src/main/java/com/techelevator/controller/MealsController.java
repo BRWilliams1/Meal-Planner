@@ -7,6 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 
@@ -21,6 +22,11 @@ public class MealsController {
         return mealsDao.getAllMeals();
     }
 
+    @RequestMapping(path = "/usersMeals", method = RequestMethod.GET)
+    public List<Meals> getAllUsersMeals(Principal principal){
+        return mealsDao.getAllUsersMeals(principal.getName());
+    }
+
     @RequestMapping(path = "/meals/{id}", method = RequestMethod.GET)
     public Meals getMealById(@PathVariable int id){
         Meals meal = mealsDao.getMealById(id);
@@ -28,8 +34,8 @@ public class MealsController {
     }
 
     @RequestMapping(path = "/addMeal", method = RequestMethod.POST)
-    public void addMeal(@Valid @RequestBody Meals meal){
-        mealsDao.addMeal(meal);
+    public void addMeal(@Valid @RequestBody Meals meal, Principal principal){
+        mealsDao.addMeal(meal, principal.getName());
     }
 
     @RequestMapping(path = "/editMeal", method = RequestMethod.PUT)

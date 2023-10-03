@@ -5,6 +5,10 @@ export default {
     getAllMeals(){
         return axios.get("/meals");
     },
+    
+    getUsersMeal(){
+        return axios.get("/usersMeals" );
+    },
 
     getMealById(id){
         return axios.get("/meals/" + id);

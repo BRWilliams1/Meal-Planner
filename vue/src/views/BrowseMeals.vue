@@ -2,6 +2,7 @@
   <div class="home">
     <h1>Browse Meals</h1>
     <router-link v-bind:to="{name: 'addMeal' }"> Add Meal </router-link>
+    <router-link v-bind:to="{name: 'browseMyMeals' }"> Browse My Meals </router-link> 
     <div class="meals-container">
       <div v-for="meal in meals" v-bind:key="meal.mealId" class="meal-card">
         <p>{{ meal.mealName }}</p>

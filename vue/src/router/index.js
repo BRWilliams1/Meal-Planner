@@ -13,6 +13,7 @@ import BrowseHouseholds from '../views/BrowseHouseholds.vue'
 import MyHousehold from '../views/MyHousehold.vue'
 import AddHouseholdView from '../views/AddHouseholdView'
 import BrowseMealPlans from '../views/BrowseMealPlans'
+import BrowseMyMeals from '../views/BrowseMyMeals.vue'
 
 Vue.use(Router)
 
@@ -89,6 +90,14 @@ const router = new Router({
       path: "/browseMeals",
       name: "browseMeals",
       component: BrowseMeals,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/browseMyMeals",
+      name: "browseMyMeals",
+      component: BrowseMyMeals,
       meta: {
         requiresAuth: false
       }
