@@ -69,7 +69,7 @@
           if(confirm("Are you sure you want to delete this household?")){
             HouseholdService.resetMembersHousehold(this.household).then((response) => {
               console.log(this.household);
-              HouseholdService.deleteHousehold(this.$route.params.id);
+              HouseholdService.deleteHousehold(this.household.householdId);
                   if(response.status == 200) {
                           window.alert("Household Deleted");
                           window.location.reload();

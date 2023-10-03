@@ -8,6 +8,8 @@ public class Meals {
     private String ingredients;
     private String instructions;
 
+    private String mealOwner;
+
 
     public int getMealId() {
         return mealId;
@@ -47,6 +49,14 @@ public class Meals {
 
     public void setInstructions(String instructions) {
         this.instructions = instructions;
+    }
+
+    public String getMealOwner() {
+        return mealOwner;
+    }
+
+    public void setMealOwner(String mealOwner) {
+        this.mealOwner = mealOwner;
     }
 
 }

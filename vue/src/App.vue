@@ -3,7 +3,7 @@
       <div id="nav">
         <div class="nav-left">
           <router-link class="nav-link" v-bind:to="{ name: 'home' }">Home</router-link>
-          <router-link class="nav-link" v-if="$store.state.token != ''" v-bind:to="{ name: 'myHousehold', params:{id: household.householdId} }">My Household</router-link>
+          <router-link class="nav-link" v-if="$store.state.token != ''" v-bind:to="{ name: 'myHousehold' }">My Household</router-link>
           <router-link class="nav-link" v-bind:to="{ name: 'browseMeals' }">Browse Meals</router-link>
           <router-link class="nav-link" v-if="$store.state.token != ''" v-bind:to="{ name: 'home' }">Generate Meal Plan</router-link>
         </div>
