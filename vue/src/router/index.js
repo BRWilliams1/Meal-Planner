@@ -102,7 +102,7 @@ const router = new Router({
       }
     },
     {
-      path: "/myHousehold/:id",
+      path: "/myHousehold",
       name: "myHousehold",
       component: MyHousehold,
       meta: {
