@@ -14,10 +14,10 @@ INSERT INTO meals(meal_name, description, ingredients, instructions) VALUES ('GR
 INSERT INTO meals(meal_name, description, ingredients, instructions) VALUES ('SOUP', 'food', 'tomato, chicken, herbs, biscuits', 'cook');
 INSERT INTO meals(meal_name, description, ingredients, instructions) VALUES ('CHICKEN SALAD', 'food', 'tomato, chicken, onions, dressing, cheese', 'cook');
 
-INSERT INTO meal_plan(household_id) VALUES (1);
-INSERT INTO meal_plan(household_id) VALUES (2);
-INSERT INTO meal_plan(household_id) VALUES (2);
-INSERT INTO meal_plan(household_id) VALUES (2);
+INSERT INTO meal_plan(household_id, meal_name, planner_date, meal_plan_details) VALUES (1, 'FISH AND CHIPS', '1/23/23', 'Fried fish with chips served together' );
+INSERT INTO meal_plan(household_id, meal_name, planner_date, meal_plan_details) VALUES (2, 'CHICKEN AND PASTA', '6/23/23', 'Chicken breast served with pasta' );
+INSERT INTO meal_plan(household_id, meal_name, planner_date, meal_plan_details) VALUES (1, 'STEAK AND POTATOES', '8/23/23', 'Grilled steak served with mashed potatoes' );
+INSERT INTO meal_plan(household_id, meal_name, planner_date, meal_plan_details) VALUES (2, 'TACO AND BEANS', '4/23/23', 'Taco with flour tortilla served with beans' );
 
 INSERT INTO meal_plan_data(meal_plan_id, planner_date, meal_id) VALUES (1, '1/3/24', 3);
 INSERT INTO meal_plan_data(meal_plan_id, planner_date, meal_id) VALUES (1, '1/4/24', 2);

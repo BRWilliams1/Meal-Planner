@@ -22,8 +22,8 @@ export default {
         return axios.put("/resetUsersHousehold");
     },
     
-    deleteHousehold(householdId){
-        return axios.delete("/deleteHousehold", householdId);
+    deleteHousehold(id){
+        return axios.delete("/deleteHousehold/" + id);
     },
 
     resetMembersHousehold(householdId){

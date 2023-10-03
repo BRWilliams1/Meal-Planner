@@ -42,9 +42,9 @@ public class HouseholdsController {
         return householdsDao.getMembersByUsername(principal.getName());
     }
 
-    @RequestMapping(path = "/deleteHousehold", method = RequestMethod.DELETE)
-    public void deleteHousehold(@RequestBody UserDto userDto){
-        householdsDao.deleteHousehold(userDto);
+    @RequestMapping(path = "/deleteHousehold/{id}", method = RequestMethod.DELETE)
+    public void deleteHousehold(@PathVariable int id){
+        householdsDao.deleteHousehold(id);
     }
 
     @RequestMapping(path = "/resetUsersHousehold", method = RequestMethod.PUT)
