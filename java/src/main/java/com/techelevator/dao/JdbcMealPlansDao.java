@@ -117,7 +117,7 @@ public class JdbcMealPlansDao implements MealPlansDao {
 
     @Override
     public void editMealPlans(MealPlans meal) {
-        String sql = "UPDATE meal_plan SET planner_date = ?, meal_name = ?, planner_date = ?, meal_plan_details = ? WHERE meal_plan_id = ?";
+        String sql = "UPDATE meal_plan SET household_id = ?, meal_name = ?, planner_date = ?, meal_plan_details = ? WHERE meal_plan_id = ?";
         template.update(sql, meal.getHouseholdId(),meal.getMealName(), meal.getPlannerDate(), meal.getMealDetails(), meal.getMealPlanId());
 
     }

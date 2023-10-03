@@ -6,15 +6,20 @@
           <tr>
             <th>Date</th>
             <th>Meal Name</th>
+            <th>Details</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="mealPlan in mealPlans" v-bind:key="mealPlan.mealPlanId">
             <td>{{ mealPlan.plannerDate }}</td>
             <td>{{ mealPlan.mealName }}</td>
+            <td>{{mealPlan.mealDetails}}</td>
+            <button ><router-link v-bind:to="{ name: 'editMealPlan', params:{id:mealPlan.mealPlanId}}">Edit</router-link></button>
           </tr>
         </tbody>
       </table>
+        <button><router-link v-bind:to="{ name: 'addMealPlan' }">Add Mealplan</router-link></button>
+
     </div>
   </template>
   

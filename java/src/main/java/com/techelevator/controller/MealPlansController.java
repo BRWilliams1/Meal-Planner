@@ -19,7 +19,7 @@ public class MealPlansController {
         return mealPlansDao.getAllMealPlans();
     }
 
-    @RequestMapping(path = "/mealplan/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/mealPlan/{id}", method = RequestMethod.GET)
     public MealPlans getMealPlanById(@PathVariable int id){
         MealPlans mealplan = mealPlansDao.getMealPlansById(id);
         return mealplan;

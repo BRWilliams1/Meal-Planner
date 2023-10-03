@@ -7,19 +7,19 @@ export default {
     },
 
     getMealById(id){
-        return axios.get("/meals/" + id);
+        return axios.get("/mealPlan/" + id);
     },
 
     addMeal(meal){
-        return axios.post("/addMeal", meal);
+        return axios.post("/addMealPlan", meal);
     },
 
     editMeal(meal){
-        return axios.put("/editMeal", meal);
+        return axios.put("/editMealPlan", meal);
     },
 
-    deleteMeal(id){
-        return axios.delete("/meals/" + id);
-    }
+    // deleteMeal(id){
+    //     return axios.delete("/meals/" + id);
+    // }
 
 }
