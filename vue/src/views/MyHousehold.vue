@@ -1,7 +1,13 @@
 <template>
     <div class="myHoushold">
       <div v-if="household.householdId != 0">
-        <h1>{{ household.householdName }}</h1>
+        <h1>{{ household.householdName }}</h1> 
+        <form v-on:submit.prevent="editHousehold">
+        <label>Household</label>
+        <input v-model="household.householdName" />
+
+        <button>Save</button>
+    </form>
         <!-- <p>{{ household.householdId }}</p>
         <p>{{ household }}</p> -->
         <button v-on:click="leaveHousehold">Leave Household</button>
@@ -35,6 +41,7 @@
       }
     },
     created(){
+      
       HouseholdService.getUsersHouseholdId().then((response) => {
         console.log(response.data);
         this.household = response.data;
@@ -62,7 +69,7 @@
           if(confirm("Are you sure you want to delete this household?")){
             HouseholdService.resetMembersHousehold(this.household).then((response) => {
               console.log(this.household);
-              HouseholdService.deleteHousehold(this.household);
+              HouseholdService.deleteHousehold(this.$route.params.id);
                   if(response.status == 200) {
                           window.alert("Household Deleted");
                           window.location.reload();
@@ -77,6 +84,17 @@
               })
           }
         },
+editHousehold(){
+            HouseholdService.editHousehold(this.household).then((response) => {
+                if(response.status == 200) {
+                        window.alert("Household updated!");
+                }
+            })
+          }
+
+
+
+
     }
   };
   

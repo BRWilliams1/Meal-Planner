@@ -83,14 +83,14 @@ public class JdbcHouseholdsDao implements HouseholdsDao {
     }
 
     @Override
-    public void deleteHousehold(UserDto userDto) {
+    public void deleteHousehold(int id) {
         String sql = "DELETE FROM meal_plan_data WHERE meal_plan_id IN " +
                 "(SELECT meal_plan_id FROM meal_plan WHERE household_id = ?);";
-        template.update(sql, userDto.getHouseholdId());
+        template.update(sql,id);
         sql = "DELETE FROM meal_plan WHERE household_id = ?;";
-        template.update(sql, userDto.getHouseholdId());
+        template.update(sql, id);
         sql = "DELETE FROM households WHERE household_id = ?;";
-        template.update(sql, userDto.getHouseholdId());
+        template.update(sql, id);
     }
 
     @Override

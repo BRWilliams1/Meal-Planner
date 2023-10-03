@@ -12,7 +12,7 @@ public interface HouseholdsDao {
     public Households getHouseholdById(int id);
     public List<UserDto> getMembersByUsername(String username);
     public Households getHouseholdIdByUser(String username);
-    public void deleteHousehold(UserDto userDto);
+    public void deleteHousehold(int id);
     public int addHousehold(Households household, String username);
     public void editHousehold(Households household);
     public void resetUserHousehold(String username);
