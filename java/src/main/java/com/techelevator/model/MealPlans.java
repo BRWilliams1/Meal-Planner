@@ -7,8 +7,9 @@ public class MealPlans {
     private int mealPlanId;
     private int householdId;
     private String plannerDate;
-    private int mealId;
+ //   private int mealId;
     private String mealName;
+    private String mealDetails;
 
 
     public int getMealPlanId() {
@@ -22,8 +23,7 @@ public class MealPlans {
     public int getHouseholdId() {
         return householdId;
     }
-
-    public void setHouseholdId(int householdId) {
+   public void setHouseholdId(int householdId) {
         this.householdId = householdId;
     }
 
@@ -35,13 +35,13 @@ public class MealPlans {
         this.plannerDate = plannerDate;
     }
 
-    public int getMealId() {
-        return mealId;
-    }
-
-    public void setMealId(int mealId) {
-        this.mealId = mealId;
-    }
+//    public int getMealId() {
+//        return mealId;
+//    }
+//
+//    public void setMealId(int mealId) {
+//        this.mealId = mealId;
+//    }
 
     public String getMealName() {
         return mealName;
@@ -51,6 +51,11 @@ public class MealPlans {
         this.mealName = mealName;
     }
 
+    public String getMealDetails() {
+        return mealDetails;
+    }
 
-
+    public void setMealDetails(String mealDetails) {
+        this.mealDetails = mealDetails;
+    }
 }

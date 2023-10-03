@@ -31,6 +31,9 @@ CREATE TABLE meals (
 CREATE TABLE meal_plan (
     meal_plan_id SERIAL,
     household_id int,
+    meal_name varchar (50) NOT NULL,
+    planner_date varchar(50) NOT NULL,
+    meal_plan_details varchar (250) NOT NULL,
     CONSTRAINT PK_meal_plan_id PRIMARY KEY (meal_plan_id),
     CONSTRAINT FK_household_id FOREIGN KEY (household_id) REFERENCES households(household_id)
 );
