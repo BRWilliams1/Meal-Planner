@@ -64,7 +64,7 @@ public class JdbcHouseholdsDao implements HouseholdsDao {
     }
 
     @Override
-    public List<UserDto> getMembersByUsername(String username) {
+    public List<UserDto> getMembersByUsername(String username) { // whats the difference between above
         String sql = "SELECT user_id, username, household_id FROM users WHERE household_id = " +
                 "(SELECT households.household_id FROM households " +
                 "JOIN users ON users.household_id = households.household_id " +
