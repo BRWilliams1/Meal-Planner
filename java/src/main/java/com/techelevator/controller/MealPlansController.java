@@ -35,8 +35,8 @@ public class MealPlansController {
         mealPlansDao.editMealPlans(mealPlans);
     }
 
-    @RequestMapping(path = "/mealplan/{id}", method = RequestMethod.DELETE)
-    public void deleteHousehold(@PathVariable int id){
-        mealPlansDao.deleteMeal(id);
-    }
+//    @RequestMapping(path = "/mealplan/{id}", method = RequestMethod.DELETE)
+//    public void deleteHousehold(@PathVariable int id){
+//        mealPlansDao.deleteMeal(id);
+//    }
 }

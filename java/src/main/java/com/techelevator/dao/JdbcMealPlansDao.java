@@ -82,20 +82,20 @@ public class JdbcMealPlansDao implements MealPlansDao {
         return mealplan;
     }
 
-    @Override
-    public void deleteMeal(int id) {
-//        String sql = "DELETE FROM households_meals WHERE household_id = ?";
-//        template.update(sql, id);
-//        sql = "DELETE FROM households WHERE household_id = ?";
-//        template.update(sql, id);
-//        sql = "DELETE FROM meal_plan WHERE household_id = ?";
+//    @Override
+//    public void deleteMeal(int id) {
+////        String sql = "DELETE FROM households_meals WHERE household_id = ?";
+////        template.update(sql, id);
+////        sql = "DELETE FROM households WHERE household_id = ?";
+////        template.update(sql, id);
+////        sql = "DELETE FROM meal_plan WHERE household_id = ?";
+////        template.update(sql, id);
+//
+//         String sql1 = "DELETE from households WHERE household_id = ? JOIN meal_plan ON meal_plan.household_id = households.household_id ;";
+//         String sql = "Delete from meal_plan WHERE meal_plan_id = ?;";
 //        template.update(sql, id);
 
-         String sql1 = "DELETE from households WHERE household_id = ? JOIN meal_plan ON meal_plan.household_id = households.household_id ;";
-         String sql = "Delete from meal_plan WHERE meal_plan_id = ?;";
-        template.update(sql, id);
-
-    }
+//    }
 
     @Override
     public void addMealPlans(MealPlans meal) {
