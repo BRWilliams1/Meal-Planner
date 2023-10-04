@@ -5,17 +5,25 @@ export default {
     getAllMealPlans(){
         return axios.get("/mealPlans");
     },
+    
+    getAllMealPlanNames(id){
+        return axios.get("/mealPlanNames/" + id);
+    },
 
-    getMealById(id){
+    getMealPlansByMealPlanId(id){
         return axios.get("/mealPlan/" + id);
     },
 
-    addMeal(meal){
-        return axios.post("/addMealPlan", meal);
+    addMealPlan(mealPlan){
+        return axios.post("/addMealPlan", mealPlan);
     },
 
-    editMeal(meal){
-        return axios.put("/editMealPlan", meal);
+    editMeal(mealPlan){
+        return axios.put("/editMealPlan", mealPlan);
+    },
+
+    addMealToMealPlan(meal){
+        return axios.put("/addMealToMealPlan", meal);
     },
 
     // deleteMeal(id){

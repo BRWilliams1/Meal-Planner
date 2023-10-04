@@ -1,54 +1,47 @@
 <template>
-    <div class="browseMealPlans">
-      <h1>Browse Meal Plans</h1>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Meal Name</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="mealPlan in mealPlans" v-bind:key="mealPlan.mealPlanId">
-            <td>{{ mealPlan.plannerDate }}</td>
-            <td>{{ mealPlan.mealName }}</td>
-            <td>{{mealPlan.mealDetails}}</td>
-            <button ><router-link v-bind:to="{ name: 'editMealPlan', params:{id:mealPlan.mealPlanId}}">Edit</router-link></button>
-          </tr>
-        </tbody>
-      </table>
-        <button><router-link v-bind:to="{ name: 'addMealPlan' }">Add Mealplan</router-link></button>
+  <div class="browseMealPlans">
+    <h1>Browse Meal Plans</h1>
 
-    </div>
-  </template>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Meal Plan Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="mealPlan in mealPlanNames" v-bind:key="mealPlan.mealPlanId">
+          <td><router-link v-bind:to="{ name: 'mealPlanDetails', params:{id: mealPlan.mealPlanId}}">
+            {{ mealPlan.mealPlanName }}</router-link></td>
+        </tr>
+      </tbody>
+    </table>
+    <button><router-link v-bind:to="{ name: 'generateMealPlan' }">Add Mealplan</router-link></button>
+
+  </div>
+</template>
   
-  <script>
-  import MealPlansService from '../services/MealPlansService';
-  
-  export default {
-    name: "home",
-    data(){
-      return{
-        mealPlans: []
-      }
-    },
-    created(){
-      MealPlansService.getAllMealPlans().then((response) => {
-        this.mealPlans = response.data;
-      })
-    },
-  };
-  </script>
+<script>
+import MealPlansService from '../services/MealPlansService';
+import HouseholdService from '../services/HouseholdService';
 
-  <style>
-  .browseMealPlans {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+export default {
+  name: "home",
+  data() {
+    return {
+      mealPlanNames: [],
+    }
+  },
+  created() {
 
-  /* can you style the table so that eachn item has a box around it  */
-   
-  </style>
+    HouseholdService.getUsersHouseholdId().then((response) => {
+      console.log(response.data);
+      MealPlansService.getAllMealPlanNames(response.data.householdId).then((response) => {
+        console.log(response.data);
+        this.mealPlanNames = response.data;
+      });
+    });
+  },
+};
+</script>
+
+<style></style>

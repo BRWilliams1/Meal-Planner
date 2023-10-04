@@ -1,15 +1,17 @@
 package com.techelevator.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class MealPlans {
 
     private int mealPlanId;
+    private String mealPlanName;
     private int householdId;
-    private String plannerDate;
- //   private int mealId;
-    private String mealName;
-    private String mealDetails;
+    private Date plannerDate;
+    private Date startDate;
+    private Date endDate;
+    private int mealId;
 
 
     public int getMealPlanId() {
@@ -23,39 +25,47 @@ public class MealPlans {
     public int getHouseholdId() {
         return householdId;
     }
-   public void setHouseholdId(int householdId) {
+    public void setHouseholdId(int householdId) {
         this.householdId = householdId;
     }
 
-    public String getPlannerDate() {
+    public Date getPlannerDate() {
         return plannerDate;
     }
 
-    public void setPlannerDate(String plannerDate) {
+    public void setPlannerDate(Date plannerDate) {
         this.plannerDate = plannerDate;
     }
 
-//    public int getMealId() {
-//        return mealId;
-//    }
-//
-//    public void setMealId(int mealId) {
-//        this.mealId = mealId;
-//    }
-
-    public String getMealName() {
-        return mealName;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setMealName(String mealName) {
-        this.mealName = mealName;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public String getMealDetails() {
-        return mealDetails;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setMealDetails(String mealDetails) {
-        this.mealDetails = mealDetails;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public int getMealId() {
+        return mealId;
+    }
+
+    public void setMealId(int mealId) {
+        this.mealId = mealId;
+    }
+
+    public String getMealPlanName() {
+        return mealPlanName;
+    }
+
+    public void setMealPlanName(String mealPlanName) {
+        this.mealPlanName = mealPlanName;
     }
 }

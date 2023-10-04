@@ -32,20 +32,17 @@ CREATE TABLE meals (
 CREATE TABLE meal_plan (
     meal_plan_id SERIAL,
     household_id int,
-    meal_name varchar (50) NOT NULL,
-    planner_date varchar(50) NOT NULL,
-    meal_plan_details varchar (250) NOT NULL,
+    meal_plan_name varchar(50) NOT NULL,
     CONSTRAINT PK_meal_plan_id PRIMARY KEY (meal_plan_id),
     CONSTRAINT FK_household_id FOREIGN KEY (household_id) REFERENCES households(household_id)
 );
 
 CREATE TABLE meal_plan_data (
-    meal_plan_id int,
+    meal_plan_id int NOT NULL,
     planner_date date,
     meal_id int,
     CONSTRAINT FK_meal_plan_id FOREIGN KEY (meal_plan_id) REFERENCES meal_plan(meal_plan_id),
     CONSTRAINT FK_meal_id FOREIGN KEY (meal_id) REFERENCES meals(meal_id)
 );
-
 
 COMMIT TRANSACTION;

@@ -13,6 +13,7 @@
         <button v-on:click="leaveHousehold">Leave Household</button>
         <button v-on:click="deleteHousehold">Delete Household</button>
         <household-members/>
+        <browse-meal-plans/>
       </div>
       <div v-else>
         <h1>Create Household</h1>
@@ -28,12 +29,13 @@
   import AddHousehold from '../components/AddHousehold.vue';
   import HouseholdMembers from '../components/HouseholdMembers.vue';
   import HouseholdService from '../services/HouseholdService';
-  
+  import BrowseMealPlans from '../views/BrowseMealPlans.vue';
   
   export default {
     components: {
       HouseholdMembers,
-      AddHousehold
+      AddHousehold,
+      BrowseMealPlans
     },
     data(){
       return{
