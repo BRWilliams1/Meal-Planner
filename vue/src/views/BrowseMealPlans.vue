@@ -9,13 +9,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="mealPlan in mealPlanNames" v-bind:key="mealPlan.mealPlanId">
-          <td><router-link v-bind:to="{ name: 'mealPlanDetails', params:{id: mealPlan.mealPlanId}}">
+        <tr v-for="mealPlan in mealPlanNames" :key="mealPlan.mealPlanId">
+          <td><router-link :to="{ name: 'mealPlanDetails', params:{id: mealPlan.mealPlanId}}">
             {{ mealPlan.mealPlanName }}</router-link></td>
         </tr>
       </tbody>
     </table>
-    <button><router-link v-bind:to="{ name: 'generateMealPlan' }">Add Mealplan</router-link></button>
+    <button><router-link :to="{ name: 'generateMealPlan' }">Add Mealplan</router-link></button>
 
   </div>
 </template>
@@ -25,23 +25,38 @@ import MealPlansService from '../services/MealPlansService';
 import HouseholdService from '../services/HouseholdService';
 
 export default {
-  name: "home",
+  name: "browse-meal-plans",
   data() {
     return {
       mealPlanNames: [],
     }
   },
-  created() {
-
-    HouseholdService.getUsersHouseholdId().then((response) => {
-      console.log(response.data);
-      MealPlansService.getAllMealPlanNames(response.data.householdId).then((response) => {
-        console.log(response.data);
-        this.mealPlanNames = response.data;
-      });
-    });
+  async created() {
+    const response = await HouseholdService.getUsersHouseholdId();
+    const mealPlanResponse = await MealPlansService.getAllMealPlanNames(response.data.householdId);
+    this.mealPlanNames = mealPlanResponse.data;
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.browseMealPlans {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.browseMealPlans table {
+  width: 50%;
+}
+
+.browseMealPlans button {
+  width: 10%;
+}
+
+.browseMealPlans h1 {
+  margin-bottom: 20px;
+}
+
+</style>

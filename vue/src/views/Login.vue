@@ -17,7 +17,7 @@
         <input type="password" id="password" v-model="user.password" required />
       </div>
       <button type="submit">Sign in</button>
-      <p>
+      <p class="sign-up-link" >
       <router-link :to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
     </form>
   </div>
@@ -64,8 +64,34 @@ export default {
 <style scoped>
 .form-input-group {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 label {
   margin-right: 0.5rem;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  height: 100vh;
+}
+
+.sign-up-link {
+  margin-top: 1rem;
+}
+
+#login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 </style>

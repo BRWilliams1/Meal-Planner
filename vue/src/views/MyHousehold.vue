@@ -103,10 +103,5 @@ editHousehold(){
   </script>
   
   <style>
-  .myHoushold {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    
   </style>

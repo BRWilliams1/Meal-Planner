@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div class="home">
+    <img class="blueLogo" src="../assets/HouseMatesBlue.png" alt="Blue HouseMates Logo">
     <h1>Welcome to Housemates</h1>
     <h5>Meal Planning for Mixed Households</h5>
     <div>
@@ -13,10 +14,8 @@
 </script>
 
 
-<style>
-/* could you style it so that the all the content is in the center of the page and so that the links look like buttons
-*/
-.container {
+<style scoped>
+.home {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,13 +28,24 @@
   margin-top: 20px;
   margin-right: 10px; 
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #083D77;
+  color: #EBEBD3;
   border-radius: 5px;
   text-decoration: none;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.home-page-link:hover {
+  background-color: #EE964B;
+  color: #083D77;
+}
+
+.blueLogo {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
 }
 </style>

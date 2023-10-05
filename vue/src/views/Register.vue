@@ -18,7 +18,7 @@
         <input type="password" id="confirmPassword" v-model="user.confirmPassword" required />
       </div>
       <button type="submit">Create Account</button>
-      <p><router-link :to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
+      <p class="login-link" ><router-link  :to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
     </form>
   </div>
 </template>
@@ -76,8 +76,26 @@ export default {
 <style scoped>
 .form-input-group {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
 }
 label {
   margin-right: 0.5rem;
 }
+
+#register {
+  margin: 0 auto;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  height: 100vh;
+}
+
+.login-link {
+  margin-top: 1rem;
+}
+
 </style>

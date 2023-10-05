@@ -40,7 +40,7 @@ CREATE TABLE meal_plan (
 CREATE TABLE meal_plan_data (
     meal_plan_id int NOT NULL,
     planner_date date,
-    meal_id int,
+    meal_id int DEFAULT 1,
     CONSTRAINT FK_meal_plan_id FOREIGN KEY (meal_plan_id) REFERENCES meal_plan(meal_plan_id),
     CONSTRAINT FK_meal_id FOREIGN KEY (meal_id) REFERENCES meals(meal_id)
 );

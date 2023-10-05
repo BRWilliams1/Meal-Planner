@@ -12,6 +12,7 @@ public class MealPlans {
     private Date startDate;
     private Date endDate;
     private int mealId;
+    private String mealName;
 
 
     public int getMealPlanId() {
@@ -67,5 +68,13 @@ public class MealPlans {
 
     public void setMealPlanName(String mealPlanName) {
         this.mealPlanName = mealPlanName;
+    }
+
+    public String getMealName() {
+        return mealName;
+    }
+
+    public void setMealName(String mealName) {
+        this.mealName = mealName;
     }
 }
