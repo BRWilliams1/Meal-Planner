@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="editMeal">
       <h1>Edit Meal</h1>
       <edit-meal />
     </div>
@@ -18,4 +18,11 @@
   </script>
   
   <style>
+  /* .editMeal {
+      margin: 0 auto;
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      height: 25vh;
+  } */
   </style>

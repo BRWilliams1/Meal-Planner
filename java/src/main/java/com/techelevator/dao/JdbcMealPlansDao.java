@@ -56,9 +56,11 @@ public class JdbcMealPlansDao implements MealPlansDao {
     @Override
     public List<MealPlans> getMealPlanByMealPlanId(int id) {
         String sql = "SELECT meal_plan.meal_plan_id, household_id, meal_plan_name, " +
-                "meal_plan_data.planner_date, meal_plan_data.meal_id FROM meal_plan " +
+                "meal_plan_data.planner_date, meal_plan_data.meal_id, meals.meal_name FROM meal_plan " +
                 "JOIN meal_plan_data ON meal_plan.meal_plan_id = meal_plan_data.meal_plan_id " +
-                "WHERE meal_plan.meal_plan_id = ?;";
+                "JOIN meals ON meal_plan_data.meal_id = meals.meal_id " +
+                "WHERE meal_plan.meal_plan_id = ? " +
+                "ORDER BY meal_plan_data.planner_date ASC;";
         SqlRowSet results = template.queryForRowSet(sql, id);
         List<MealPlans> listOfMealPlans = new ArrayList<>();
         while(results.next()){
@@ -68,6 +70,7 @@ public class JdbcMealPlansDao implements MealPlansDao {
             mealPlan.setMealPlanName(results.getString("meal_plan_name"));
             mealPlan.setPlannerDate(results.getDate("planner_date"));
             mealPlan.setMealId(results.getInt("meal_id"));
+            mealPlan.setMealName(results.getString("meal_name"));
             listOfMealPlans.add(mealPlan);
         }
         return listOfMealPlans;
@@ -120,6 +123,12 @@ public class JdbcMealPlansDao implements MealPlansDao {
     @Override
     public void addMealToMealPlan(MealPlans mealPlan) {
         String sql = "UPDATE meal_plan_data SET meal_id = ? WHERE meal_plan_id = ? AND planner_date = ?;";
-        template.update(sql, mealPlan.getMealId(), mealPlan.getMealPlanId(), mealPlan.getPlannerDate());
+
+        Date datePlannerDate = mealPlan.getPlannerDate();
+        Calendar plannerDate = Calendar.getInstance();
+        plannerDate.setTime(datePlannerDate);
+        plannerDate.add(Calendar.DAY_OF_MONTH, 1);
+
+        template.update(sql, mealPlan.getMealId(), mealPlan.getMealPlanId(), plannerDate.getTime());
     }
 }

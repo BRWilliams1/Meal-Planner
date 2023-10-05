@@ -6,6 +6,7 @@ INSERT INTO households(household_name, household_owner) VALUES ('home2', 'admin'
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 1);
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', 1);
 
+INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('Meal', 'description', 'ingredients', 'instructions', '');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PIZZA', 'food', 'cheese, sauce, crust, veggies, meats', 'cook', 'user');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PASTA', 'food', 'cheese, sauce, noodles, veggies, meats', 'cook', 'user');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('BURGER', 'food', 'cheese, lettuce, tomato, bun, meat', 'cook', 'user');
