@@ -18,7 +18,7 @@ INSERT INTO users (username,password_hash,role, household_id) VALUES ('Brett','$
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('Mohamed','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 6);
 
 
-INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('Meal', 'description', 'ingredients', 'instructions', '');
+INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('Meal', 'description', 'ingredients', 'instructions', 'admin');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PIZZA', 'Dish of Italian origin consisting of bread dough topped with some combination of cheese and toppings', 'cheese, sauce, crust, veggies, meats', 'bake in oven for a set time', 'user');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PASTA', 'Italian descent, typically made from a dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking', 'cheese, sauce, noodles, veggies, meats', 'boil in water until ready', 'user');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('BURGER', 'A patty of ground beef grilled and placed between two halves of a bun', 'cheese, lettuce, tomato, bun, meat', 'prepare toppings and sauces, grill meat, warm up buns, and combine all', 'user');

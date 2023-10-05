@@ -21,11 +21,11 @@ CREATE TABLE users (
 
 CREATE TABLE meals (
     meal_id SERIAL,
-    meal_name varchar(50) NOT NULL,
-    description varchar(200) NOT NULL,
-    ingredients varchar(50) NOT NULL,
-    instructions varchar(50) NOT NULL,
-    meal_owner varchar(50) NOT NULL,
+    meal_name varchar(100) NOT NULL,
+    description varchar(300) NOT NULL,
+    ingredients varchar(100) NOT NULL,
+    instructions varchar(100) NOT NULL,
+    meal_owner varchar(100) NOT NULL,
     CONSTRAINT PK_meal_id PRIMARY KEY (meal_id)
 );
 
