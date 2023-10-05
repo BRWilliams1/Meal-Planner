@@ -66,11 +66,11 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 75%;
 }
 
 .meal-card {
-  width: calc(33.33% - 10px);
+  width: calc(30% - 10px);
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -81,6 +81,7 @@ export default {
   align-items: center;
   background-color: #083D77;
   color: white;
+  white-space: nowrap;
 }
 
 .meal-card button {
@@ -181,10 +182,9 @@ export default {
 
 .meal-link-container {
   display: flex;
-  justify-content: space-between;
-  width: 18%;
-  margin-bottom: 10px;
-  white-space: nowrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    white-space: nowrap;
 }
 </style>
 

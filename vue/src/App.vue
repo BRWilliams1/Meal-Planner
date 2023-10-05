@@ -45,6 +45,7 @@ export default ({
 </script>
   
 <style>
+
 #app {
   margin-top: 0;
   background-color: #EBEBD3;

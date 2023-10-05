@@ -1,21 +1,25 @@
 <template>
   <div class="browseMealPlans">
-    <h1>Browse Meal Plans</h1>
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Meal Plan Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="mealPlan in mealPlanNames" :key="mealPlan.mealPlanId">
-          <td><router-link :to="{ name: 'mealPlanDetails', params:{id: mealPlan.mealPlanId}}">
-            {{ mealPlan.mealPlanName }}</router-link></td>
-        </tr>
-      </tbody>
-    </table>
-    <button><router-link :to="{ name: 'generateMealPlan' }">Add Mealplan</router-link></button>
+    <div class="mealPlans">
+      <h1>Browse Meal Plans</h1>
+
+      <table >
+        <thead>
+          <tr>
+            <th>Meal Plan Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="mealPlan in mealPlanNames" :key="mealPlan.mealPlanId">
+            <td><router-link :to="{ name: 'mealPlanDetails', params: { id: mealPlan.mealPlanId } }">
+                {{ mealPlan.mealPlanName }}</router-link></td>
+          </tr>
+        </tbody>
+      </table>
+      <button><router-link :to="{ name: 'generateMealPlan' }">Add Mealplan</router-link></button>
+
+    </div>
 
   </div>
 </template>
@@ -40,11 +44,23 @@ export default {
 </script>
 
 <style scoped>
+.mealPlans{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid #083D77;
+  border-radius: 15px;
+  height: 50%;
+  padding: 15px;
+  width: 100%;
+}
+
 .browseMealPlans {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .browseMealPlans table {
@@ -58,5 +74,4 @@ export default {
 .browseMealPlans h1 {
   margin-bottom: 20px;
 }
-
 </style>

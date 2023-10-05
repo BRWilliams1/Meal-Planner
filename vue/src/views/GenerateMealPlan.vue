@@ -60,7 +60,7 @@ export default {
 <style>
 .generateMealPlan {
     margin: 0 auto;
-    width: 50%;
+    width: 75%;
     padding: 10px;
     border-radius: 5px;
     height: 100vh;

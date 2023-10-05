@@ -17,7 +17,7 @@ import AddMealPlan from '../views/AddMealPlan'
 import EditMealPlan from '../views/EditMealPlan'
 import BrowseMyMeals from '../views/BrowseMyMeals.vue'
 import GenerateMealPlan from '../views/GenerateMealPlan.vue'
-import MealPlanDetails from '../components/MealPlanDetails.vue'
+import MealPlanDetails from '../views/MealPlanDetailsView.vue'
 
 Vue.use(Router)
 

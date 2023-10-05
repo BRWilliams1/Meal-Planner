@@ -34,7 +34,7 @@
             <div v-else>
                 <edit-meal :meal="editableMeal" />
                 <button class="" @click="toggleEditMeal">Cancel</button>
-                <button @click="hideDetails">Close</button>
+                <!-- <button @click="hideDetails">Close</button> -->
             </div>
         </div>
 
@@ -108,16 +108,16 @@ export default {
     height: 100vh;
 }
 
-.meals-container {
+ .meals-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 75%;
 }
 
 .meal-card {
-    width: calc(33.33% - 10px);
+    width: calc(30% - 10px);
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -128,7 +128,7 @@ export default {
     align-items: center;
     background-color: #083D77;
     color: white;
-    
+    white-space: nowrap;
 }
 
 .meal-card button {
@@ -197,8 +197,7 @@ export default {
     font-weight: bold;
     cursor: pointer;
 }
-
-.popup button {
+ .popup button {
   margin-top: 10px;
   display: inline-block;
   margin-top: 20px;
@@ -219,9 +218,9 @@ export default {
 .popup button:hover {
   background-color: #EE964B;
   color: #083D77;
-}
+} 
 
-.meals-link:hover {
+ .meals-link:hover {
     background-color: #EE964B;
     color: #083D77;
 }
@@ -229,12 +228,11 @@ export default {
 .meal-link-container {
     display: flex;
     justify-content: space-between;
-    width: 18%;
     margin-bottom: 10px;
     white-space: nowrap;
 }
 
-.button-container {
+ .button-container {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -244,7 +242,7 @@ export default {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-}
+}  
 
 
 </style>

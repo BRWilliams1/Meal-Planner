@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="addMeal">
     <form v-on:submit.prevent="addMeal">
         <label>Meal</label>
         <input v-model="meal.mealName" />
@@ -28,7 +28,7 @@ export default {
                 if(response.status == 200) {
                         window.alert("Meal Added!");
                         this.meal = {};
-                        this.$router.push({name: "home"});
+                        this.$router.push({name: "browseMyMeals"});
                 }
             })
             .catch((error) => {
@@ -45,5 +45,64 @@ export default {
 </script>
 
 <style>
+.addMeal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.addMeal form input {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.addMeal form textarea {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.addMeal form button {
+    margin-top: 10px;
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #083D77;
+    background-color: #083D77;
+    color: #EBEBD3;
+    font-weight: bold;
+}
+
+.addMeal form button:hover {
+    background-color: #EBEBD3;
+    color: #083D77;
+}
+
+.addMeal form label {
+    margin-top: 10px;
+}
+
+.addMeal {
+    margin: 0 auto;
+    width: 75%;
+    padding: 10px;
+    height: 100vh;
+}
+
+.addMeal input {
+    margin-top: 5px;
+    width: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #083D77;
+}
+
+.addMeal textarea {
+    margin-top: 5px;
+    width: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #083D77;
+}
 </style>
