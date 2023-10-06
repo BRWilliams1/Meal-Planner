@@ -47,6 +47,7 @@ export default {
   height: 50%;
   padding: 15px;
   width: 100%;
+  overflow-y: auto;
 }
 
 .browseMealPlans {
@@ -96,7 +97,7 @@ export default {
   margin-top: 10px;
   width: 50%;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 20px;
   border: 1px solid #083D77;
   background-color: #EBEBD3;
   color: #083D77;

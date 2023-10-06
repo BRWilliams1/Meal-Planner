@@ -34,7 +34,7 @@
             <div v-else>
                 <edit-meal :meal="editableMeal" />
                 <button class="" @click="toggleEditMeal">Cancel</button>
-                <!-- <button @click="hideDetails">Close</button> -->
+                <button @click="hideDetails">Close</button>
             </div>
         </div>
 
@@ -76,6 +76,7 @@ export default {
         },
         hideDetails() {
             this.selectedMeal = null;
+            window.location.reload();
         },
         toggleEditMeal() {
             this.displayEditMeal = !this.displayEditMeal;
@@ -152,6 +153,21 @@ export default {
     color: #083D77;
 }
 
+.meals-link {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #083D77;
+    color: #EBEBD3;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .popup {
     position: fixed;
     top: 50%;
@@ -181,22 +197,10 @@ export default {
 
 .popup h6 {
   font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.meals-link {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 10px;
-    padding: 10px 20px;
-    background-color: #083D77;
-    color: #EBEBD3;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-}
+
  .popup button {
   margin-top: 10px;
   display: inline-block;
@@ -242,7 +246,7 @@ export default {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-}  
+}
 
 
 </style>

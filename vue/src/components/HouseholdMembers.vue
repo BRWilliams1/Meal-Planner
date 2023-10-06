@@ -47,6 +47,7 @@ export default {
   border-radius: 15px;
   height: 50%;
   padding: 15px;
+  overflow-y: auto; /* Add this line */
 }
 
 .members h4 {

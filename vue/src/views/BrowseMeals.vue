@@ -157,6 +157,7 @@ export default {
 
 .popup h6 {
   font-size: 20px;
+  margin-bottom: 10px;
 }
 
 
