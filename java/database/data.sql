@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
-INSERT INTO households(household_name, household_owner) VALUES ('Admin Home', 'user');
-INSERT INTO households(household_name, household_owner) VALUES ('home2', 'admin');
+INSERT INTO households(household_name, household_owner) VALUES ('Admin Home', 'admin');
+INSERT INTO households(household_name, household_owner) VALUES ('home2', 'user');
 INSERT INTO households(household_name, household_owner) VALUES ('Slick Household', 'Jeremy');
 INSERT INTO households(household_name, household_owner) VALUES ('Anita Home', 'Anita');
 INSERT INTO households(household_name, household_owner) VALUES ('Antonella Home', 'Antonella');
@@ -9,7 +9,7 @@ INSERT INTO households(household_name, household_owner) VALUES ('Brett Home', 'B
 INSERT INTO households(household_name, household_owner) VALUES ('Mohamed Home', 'Mohamed');
 
 
-INSERT INTO users (username,password_hash,role, household_id) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 1);
+INSERT INTO users (username,password_hash,role, household_id) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 2);
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', 1);
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('Charles','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 3);
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('Anita','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 4);
