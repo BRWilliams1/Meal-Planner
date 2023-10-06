@@ -8,6 +8,7 @@
       <div class="household-container">
         <div class="household-card" v-for="household in households" v-bind:key="household.householdId">
           <h2>{{ household.householdName }}</h2>
+          <h4>Household Owner: {{ household.householdOwner }}</h4>
           <button @click="joinHousehold(household.householdId)">Join Household</button>
       </div>
       
