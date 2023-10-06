@@ -199,6 +199,4 @@ export default {
   background-color: #EE964B;
   color: #083D77;
 }
-
-
 </style>

@@ -40,7 +40,7 @@ export default {
                 if (response.status == 200) {
                     window.alert("Meal Plan Added!");
                     this.mealPlan = {};
-                    this.$router.push({ name: "browseMealPlans" });
+                    this.$router.push({ name: "myHousehold" });
                 }
             })
                 .catch((error) => {

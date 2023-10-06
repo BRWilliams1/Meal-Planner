@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="addHousehold">
     <form v-on:submit.prevent="runTwoMethods">
       <div>
         <label>Household Name</label>
@@ -80,4 +80,52 @@ export default {
 </script>
 
   <style>
+.addHousehold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addHousehold form {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addHousehold form input {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.addHousehold form textarea {
+  width: 300px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.addHousehold form button {
+  margin-top: 10px;
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #083D77;
+    background-color: #083D77;
+    color: #EBEBD3;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.addHousehold form button:hover {
+  background-color: #EE964B;
+    color: #083D77;
+}
+
+.addHousehold form label {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+
 </style>

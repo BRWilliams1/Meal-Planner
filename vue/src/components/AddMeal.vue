@@ -75,7 +75,7 @@ export default {
 }
 
 .addMeal form button:hover {
-    background-color: #EBEBD3;
+    background-color: #EE964B;
     color: #083D77;
 }
 

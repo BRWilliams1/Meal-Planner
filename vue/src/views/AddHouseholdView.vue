@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="add-household">
       <h1>Add Household</h1>
       <add-household />
     </div>
@@ -19,5 +19,10 @@ import AddHousehold from '../components/AddHousehold.vue';
   </script>
   
   <style>
-  
+  .add-household {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height : 100vh;
+  }
   </style>

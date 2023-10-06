@@ -49,5 +49,9 @@ export default {
   padding: 15px;
 }
 
+.members h4 {
+  font-size: 20px;
+}
+
 
 </style>

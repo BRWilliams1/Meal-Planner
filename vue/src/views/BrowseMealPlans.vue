@@ -3,22 +3,16 @@
 
     <div class="mealPlans">
       <h1>Browse Meal Plans</h1>
+      
+      <div >
+        <router-link class="generateMealPlan" :to="{ name: 'generateMealPlan' }">Add Meal Plan</router-link>
+      </div>
+      <div class="mealPlanDetails" v-for="mealPlan in mealPlanNames" :key="mealPlan.mealPlanId">
 
-      <table >
-        <thead>
-          <tr>
-            <th>Meal Plan Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="mealPlan in mealPlanNames" :key="mealPlan.mealPlanId">
-            <td><router-link :to="{ name: 'mealPlanDetails', params: { id: mealPlan.mealPlanId } }">
-                {{ mealPlan.mealPlanName }}</router-link></td>
-          </tr>
-        </tbody>
-      </table>
-      <button><router-link :to="{ name: 'generateMealPlan' }">Add Mealplan</router-link></button>
-
+        <router-link :to="{ name: 'mealPlanDetails', params: { id: mealPlan.mealPlanId } }">
+          {{ mealPlan.mealPlanName }}</router-link>
+      </div>
+      
     </div>
 
   </div>
@@ -44,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.mealPlans{
+.mealPlans {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,4 +68,46 @@ export default {
 .browseMealPlans h1 {
   margin-bottom: 20px;
 }
+
+.mealPlanDetails {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mealPlanDetails a {
+  margin-top: 10px;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #083D77;
+  background-color: #083D77;
+  color: #EBEBD3;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.mealPlanDetails a:hover {
+  background-color: #EE964B;
+  color: #083D77;
+}
+
+.generateMealPlan {
+  margin-top: 10px;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #083D77;
+  background-color: #EBEBD3;
+  color: #083D77;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.generateMealPlan:hover {
+  background-color: #EE964B;
+  color: #083D77;
+}
+
 </style>

@@ -30,11 +30,12 @@
       </div>
 
     </div>
-    <div v-else>
+    <div class="add-household" v-else>
       <h1>Create Household</h1>
       <add-household />
-      <router-link v-bind:to="{ name: 'browseHouseholds' }"> Browse Household </router-link>
-
+      <div class="browse-households-link">
+        <router-link v-bind:to="{ name: 'browseHouseholds' }"> Browse Household </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -233,5 +234,33 @@ button:hover {
 
 .household-buttons button {
   margin: 0 10px;
+}
+
+.add-household {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.browse-households-link {
+  margin-top: 10px;
+}
+
+.browse-households-link a {
+  margin-top: 10px;
+  width: 10%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #083D77;
+  background-color: #083D77;
+  color: #EBEBD3;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.browse-households-link a:hover {
+  background-color: #EE964B;
+  color: #083D77;
 }
 </style>

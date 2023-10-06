@@ -2,11 +2,11 @@ BEGIN TRANSACTION;
 
 INSERT INTO households(household_name, household_owner) VALUES ('Admin Home', 'user');
 INSERT INTO households(household_name, household_owner) VALUES ('home2', 'admin');
-INSERT INTO households(household_name, household_owner) VALUES ('Charles Home', 'user');
-INSERT INTO households(household_name, household_owner) VALUES ('Anita Home', 'user');
-INSERT INTO households(household_name, household_owner) VALUES ('Antonella Home', 'user');
-INSERT INTO households(household_name, household_owner) VALUES ('Brett Home', 'user');
-INSERT INTO households(household_name, household_owner) VALUES ('Mohamed Home', 'user');
+INSERT INTO households(household_name, household_owner) VALUES ('Charles Home', 'Charles');
+INSERT INTO households(household_name, household_owner) VALUES ('Anita Home', 'Anita');
+INSERT INTO households(household_name, household_owner) VALUES ('Antonella Home', 'Antonella');
+INSERT INTO households(household_name, household_owner) VALUES ('Brett Home', 'Brett');
+INSERT INTO households(household_name, household_owner) VALUES ('Mohamed Home', 'Mohamed');
 
 
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 1);
@@ -18,13 +18,13 @@ INSERT INTO users (username,password_hash,role, household_id) VALUES ('Brett','$
 INSERT INTO users (username,password_hash,role, household_id) VALUES ('Mohamed','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 6);
 
 
-INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('Meal', 'description', 'ingredients', 'instructions', 'admin');
+INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('Meal Name', 'Meal Description', 'Meal Ingredients', 'Meal Instructions', 'admin');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PIZZA', 'Dish of Italian origin consisting of bread dough topped with some combination of cheese and toppings', 'cheese, sauce, crust, veggies, meats', 'bake in oven for a set time', 'user');
-INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PASTA', 'Italian descent, typically made from a dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking', 'cheese, sauce, noodles, veggies, meats', 'boil in water until ready', 'user');
+INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('PASTA', 'Italian descent, typically made from a dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking', 'cheese, sauce, noodles, veggies, meats', 'boil in water until ready', 'Charles');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('BURGER', 'A patty of ground beef grilled and placed between two halves of a bun', 'cheese, lettuce, tomato, bun, meat', 'prepare toppings and sauces, grill meat, warm up buns, and combine all', 'user');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('TACO', 'Mexican food that consists of a folded and usually fried piece of thin bread (called a tortilla) that is filled with meat, cheese, lettuce, etc', 'cheese, lettuce, tomato, meat, tortilla', 'prepare toppings, cook your meat of choice, warm up tortilla and build your taco', 'user');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('GRILLED CHICKEN', 'A piece of grilled chicken you can serve with other dishes', 'chicken, herbs, butter', 'bake chicken in oven at a set temperature', 'admin');
-INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('SOUP', 'A liquid food with a meat, fish, or vegetable stock as a base and often containing pieces of solid food', 'tomato, chicken, herbs, biscuits', 'prepare herbs and vegetables, cook protein, add broth', 'admin');
+INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('SOUP', 'A liquid food with a meat, fish, or vegetable stock as a base and often containing pieces of solid food', 'tomato, chicken, herbs, biscuits', 'prepare herbs and vegetables, cook protein, add broth', 'Mohamed');
 INSERT INTO meals(meal_name, description, ingredients, instructions, meal_owner) VALUES ('CHICKEN SALAD', 'Healthy meal with combines a salad with your choice of chicken', 'tomato, chicken, onions, dressing, cheese', 'prepare chicken, pick toppings and sauces and combine', 'admin');
 
 INSERT INTO meal_plan(household_id, meal_plan_name) VALUES (2, 'Charles Meal Plan');

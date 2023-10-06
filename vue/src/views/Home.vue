@@ -2,7 +2,7 @@
   <div class="home">
     <img class="blueLogo" src="../assets/HouseMatesBlue.png" alt="Blue HouseMates Logo">
     <h1>Welcome to Housemates</h1>
-    <h5>Meal Planning for Mixed Households</h5>
+    <h3>Meal Planning for Mixed Households</h3>
     <div>
         <router-link class="home-page-link" v-bind:to="{ name: 'home' }">Home</router-link>
         <router-link class="home-page-link" v-bind:to="{ name: 'browseMeals' }">Browse Meals</router-link>
@@ -47,5 +47,15 @@
   width: 300px;
   height: 300px;
   margin-bottom: 20px;
+}
+
+.home h1 {
+  margin-bottom: 10px;
+  font-size: 45px;
+}
+
+.home h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 </style>
