@@ -72,8 +72,7 @@ export default {
     },
     runTwoMethods() {
       this.addHousehold().then(() => this.linkOwner())
-      this.$router.push({name: "myHousehold"});
-      window.location.reload();
+      this.$router.push({name: "home"});
     },
   },
 };
